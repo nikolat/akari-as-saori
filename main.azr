@@ -1,0 +1,324 @@
+// ============================================================================================= //
+// 灯asSAORIシステム用変数・定数（のような関数）定義
+// ============================================================================================= //
+string AKASAORI.ProtocolVersion(){return "SAORI/1.0" ;}
+string AKASAORI.ProtocolSender(){return "akari" ;}
+string AKASAORI.SettingCSVPath(){return "akasaori.csv" ;}
+string AKASAORI.Status(string status)
+{
+	switch(status){
+		case "OK"                    :	return "200 OK"                    ;
+		case "NO_CONTENT"            :	return "204 No Content"            ;
+		case "BAD_REQUEST"           :	return "400 Bad Request"           ;
+		case "INTERNAL_SERVER_ERROR" :	return "500 Internal Server Error" ;
+		default                      :	return "500 Internal Server Error" ;
+	}
+}
+ dict AKASAORI = ${
+			 $("VERSION"   , AKASAORI.ProtocolVersion())
+			,$("SENDER"    , AKASAORI.ProtocolSender())
+			,$("LOADEDCLS" , ${})
+			,$("LOADEDMOD" , ${})
+			,$("LOADEDCSV" , ${})
+			,$("NFCSV"     , ${})
+			,$("NFMOD"     , ${})
+			,$("ACTCSV"    , {})
+			,$("ACTMOD"    , {})
+		} ;
+ dict REQ      = ${
+			 $("HEAD"          , "")
+			,$("COMMAND"       , "")
+			,$("VERSION"       , "")
+			,$("SENDER"        , "")
+			,$("CHARSET"       , "")
+			,$("SECURITYLEVEL" , "")
+			,$("FUNC"          , "")
+			,$("ARGS"          , {})
+		} ;
+ dict RES      = ${
+ 			 $("STATUS"  , "")
+			,$("VERSION" , "")
+			,$("SENDER"  , "")
+			,$("CHARSET" , "")
+			,$("RESULT"  , "")
+			,$("VALUE"   , {})
+		} ;
+// ============================================================================================= //
+// ロード・アンロード
+// ============================================================================================= //
+load(string arg)
+{
+	AKASAORI += $("PATH" , arg) ;
+	AKASAORI.ReadSettingCSV() ;
+	AKASAORI.ReadModule() ;
+}
+unload()
+{
+	// モジュールアンロード
+	for(int i = 0 ; AKASAORI["LOADEDCLS"][i] != nil ; i++){
+		string fnc = AKASAORI["LOADEDCLS"][i] + ".ModUnload" ;
+		_fncstr(fnc) ;
+	}
+}
+
+AKASAORI.ReadSettingCSV()
+{// 設定ファイル（.csv）の読み込み
+	string path = AKASAORI.SettingCSVPath() ;
+	while(1){
+		if(AKASAORI["LOADEDCSV"][path] == nil && AKASAORI["NFCSV"][path] == nil){
+			if(_isfile(path)){
+				AKASAORI["LOADEDCSV"] += $(path , 1) ;
+				array line = _readcsv(path) ;
+
+				for(int i = 0 ; line[i] != nil ; i++){
+					switch(line[i][0]){
+					case "module"  :
+						AKASAORI["ACTMOD"] += line[i][1] ;
+						break ; //  !switch文のbreak!
+					case "include" :
+						AKASAORI["ACTCSV"] += line[i][1] ;
+						break ; // !switch文のbreak!
+					}
+				}
+			}
+			else              {
+				AKASAORI["NFCSV"] += $(path , 1) ;
+			}
+		}
+
+		if(_aryvn(AKASAORI["ACTCSV"]) > 0){
+			path = AKASAORI["ACTCSV"][0] + ".csv" ;
+			AKASAORI["ACTCSV"][0] = nil ;
+		}
+		else                              {
+			break ;
+		}
+	}
+}
+AKASAORI.ReadModule()
+{// モジュールファイル（.azr）の読み込み
+	string path ;
+	while(1){
+		if(AKASAORI["ACTMOD"][0] == nil){
+			break ;
+		}
+		else                            {
+			path = AKASAORI["ACTMOD"][0] ;
+			AKASAORI["ACTMOD"][0] = nil  ;
+		}
+
+		if((AKASAORI["LOADEDMOD"][path + ".azr"] == nil) && (AKASAORI["NFMOD"][path + ".azr"] == nil)){
+			if((int)_script_load(path)){
+				AKASAORI["LOADEDMOD"] += $(path + ".azr" , 1) ;
+			}
+			else                       {
+				AKASAORI["NFMOD"] += $(path + ".azr" , 1);
+			}
+		}
+	}
+}
+// ============================================================================================= //
+// 送受信
+// ============================================================================================= //
+array _customrequest(dict ref)
+{/*
+	SAORIリクエスト
+
+	Argument0: (dict)ref SAORIに渡された引数
+		   head         : EXECUTE SAORI/1.0|GET Version SAORI/1.0
+		   SecurityLevel: Local|External
+		   Charset      : Shift_JIS|ISO-2022-JP|EUC-JP|UTF-8
+		   Sender       : 送信元SHIORI名（ex:SATORI,AYA）
+		   Argument0    : 呼び出す関数名
+		   Argument1～  : 呼び出す関数の引数
+	Return   : (array) SAORIとしての戻り値。1行ごと1要素につめてreturnすれば
+		           あとは灯さんがCRLFで連結してSHIORIに返却してくれる
+ */
+	// 初期化[共通]
+	REQ["HEAD"]          = (string)ref["head"]          ;
+
+	array headsplit = _strsplit(REQ["HEAD"] , " SAORI") ;
+	REQ["COMMAND"]       = (string)headsplit[0]         ;
+	REQ["VERSION"]       = "SAORI" + headsplit[1]       ;
+	REQ["SENDER"]        = (string)ref["Sender"]        ;
+	REQ["CHARSET"]       = (string)ref["Charset"]       ;
+	REQ["SECURITYLEVEL"] = (string)ref["SecurityLevel"] ;
+	REQ["FUNC"]          = (string)ref["Argument0"]     ;
+	REQ["ARGS"]          = {}                           ;
+
+	RES["STATUS"]  = "" ;
+	RES["VERSION"] = "" ;
+	RES["SENDER"]  = "" ;
+	RES["CHARSET"] = "" ;
+	RES["RESULT"]  = "" ;
+	RES["VALUE"]   = {} ;
+
+	if     (REQ["COMMAND"] == "GET Version"){
+		RES["RESULT] = "AKARI/" + _version() ;
+		return AKASAORI.Response(AKASAORI.Status("OK") , 1) ;
+	}
+	else if(REQ["COMMAND"] == "EXECUTE")    {
+		// SAORI引数から関数引数を構築
+		string a ;
+		for(int i = 1 ; ref["Argument" + i] != nil ; i++){
+			a = ref["Argument" + i] ;
+			REQ["ARGS"] += a ;
+		}
+		// 呼び出された関数の実行とSAORI戻り値構築
+		if(_strstr(REQ["HEAD"] , "SAORI") != -1) {
+			if
+			(
+			(_strstr(REQ["FUNC"] , "AKASAORI.") != 0 || _strstr(REQ["FUNC"] , "AKASAORI.SYSFUNC.") == 0)
+			&& REQ["FUNC"] != "load"
+			&& REQ["FUNC"] != "unload"
+			&& REQ["FUNC"] != "_customrequest"
+			)    {
+				// モジュールロード
+				if(_strstr(REQ["FUNC"] , ".") > -1){
+					string cls = _strsplit(REQ["FUNC"] , ".")[0] ;
+					if(cls != ""){
+						if(AKASAORI["LOADEDCLS"][cls] == nil){
+							AKASAORI["LOADEDCLS"] += $(cls , 1) ;
+
+							string fnc = cls + ".ModLoad" ;
+							 _fncstr(fnc) ;
+						}
+					}
+				}
+
+				int funcreturn = _fncstr(REQ["FUNC"]);
+
+				if     (funcreturn == 0) 	return AKASAORI.Response(AKASAORI.Status("NO_CONTENT"))  ;
+				else if(funcreturn == -1)	return AKASAORI.Response(AKASAORI.Status("BAD_REQUEST")) ;
+				else                     	return AKASAORI.Response(AKASAORI.Status("OK") , 1)      ;
+			}
+			else {
+				return AKASAORI.Response(AKASAORI.Status("NO_CONTENT")) ;
+			}
+		}
+		else                                     {
+			return AKASAORI.Response(AKASAORI.Status("BAD_REQUEST")) ;
+		}
+	}
+	else                                    {
+		return AKASAORI.Response(AKASAORI.Status("BAD_REQUEST")) ;
+	}
+
+	return AKASAORI.Response(AKASAORI.Status("INTERNAL_SERVER_ERROR")) ;
+}
+array AKASAORI.Response(string status, int result)
+{/*
+	SAORI戻り値構築
+	Argument0: (string)status statusとして返却する予定の文字列
+	Argument1: (int)result    結果を返却する場合のみ1
+	Return   : (array) SAORI戻り値
+ */
+	if(RES["STATUS"]  != "") status  = RES["STATUS"]       ;
+
+	string version = "" ;
+	if(RES["VERSION"] != "") version = RES["VERSION"]      ;
+	else                     version = AKASAORI["VERSION"] ;
+
+	string sender  = "" ;
+	if(RES["SENDER"]  != "") sender  = RES["SENDER"]       ;
+	else                     sender  = AKASAORI["SENDER"]  ;
+
+	string charset = "" ;
+	if(RES["CHARSET"] != "") charset = RES["CHARSET"]      ;
+	else                     charset = REQ["CHARSET"]      ;
+
+	array response ;
+	response += version + " " + status ;
+	response += "Sender: " + sender ;
+
+	if(result){
+		// Resultの構築
+		response += "Result: " + (string)RES["RESULT"] ;
+
+		// VallueNの構築
+		for(int i = 0 ; RES["VALUE"][i] != nil ; i++){
+			response += "Value" + i + ": " + (string)RES["VALUE"][i] ;
+		}
+	}
+
+	response += "Charset: " + charset ;
+	response += "" ;
+	response += "" ;
+
+	return response ;
+}
+// ============================================================================================= //
+// 特殊なSAORI機能
+// ============================================================================================= //
+int AKASAORI.SYSFUNC.LOADEDCSV()
+{// load時に設定ファイルとして読み込まれたCSVファイルをカンマ区切りで返す
+	array key = _dickeyget(AKASAORI["LOADEDCSV"] , ",") ;
+	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
+	return 1 ;
+}
+int AKASAORI.SYSFUNC.NFCSV()
+{// load時のCSVファイル読み込みで発見できなかったCSVファイルをカンマ区切りで返す
+	array key = _dickeyget(AKASAORI["NFCSV"] , ",") ;
+	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
+	return 1 ;
+}
+int AKASAORI.SYSFUNC.LOADEDMOD()
+{// load時にモジュール辞書として読み込まれた辞書をカンマ区切りで返す
+	array key = _dickeyget(AKASAORI["LOADEDMOD"] , ",") ;
+	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
+	return 1 ;
+}
+int AKASAORI.SYSFUNC.NFMOD()
+{// load時のモジュール辞書読み込みで発見できなかったモジュール辞書をカンマ区切りで返す
+	array key = _dickeyget(AKASAORI["NFMOD"] , ",") ;
+	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
+	return 1 ;
+}
+
+// ============================================================================================= //
+// 小道具類
+// ============================================================================================= //
+string AKASAORI.TOOL.Join(array a , string s)
+{// 配列型の値の各要素間を指定した区切り字で連結した文字列にして返す
+ // 要素の中身に配列型・辞書型は不可（それぞれ要素からランダムに択一/空文字列化）
+ // Argument0: (array)a  配列
+ // Argument1: (string)s 区切り字（省略時は「,」）
+	string result ;
+
+	if(s == "")	s = "," ;
+
+	for(int i = 0 ; a[i] != nil ; i++){
+		if(i > 0) result += s ;
+		result += (string)a[i] ;
+	}
+
+	return result ;
+}
+string AKASAORI.TOOL.JoinDict(dict d , string s0 , string s1)
+{// 辞書型の値の各要素間およびキー・値間を指定した区切り字で連結した文字列にして返す
+ // 要素の並びは_dickeyget()関数の仕様に依存（たぶんunicode辞書順）
+ // 要素の中身に配列型・多次元辞書型は不可（それぞれ要素からランダムに択一/空文字列化）
+ // Argument0: (array)a   辞書型の値
+ // Argument1: (string)s0 辞書要素間の区切り字（省略時は「,」）
+ // Argument2: (string)s1 辞書のキーと値の間の区切り字（省略時は「:」）
+	string result ;
+
+	if(s0 == "") s0 = "," ;
+	if(s1 == "") s1 = ":" ;
+
+	array key = _dickeyget(d) ;
+	int   num = _aryvn(key) ;
+	for(int i = 0 ; i < num ; i++){
+		if(i > 0) result += s0 ;
+		result += (string)key[i] ;
+		result += s1 ;
+		result += (string)d[key[i]] ;
+	}
+
+	return result ;
+}
+
+AKASAORI.TOOL.PopMes(string message)
+{// _popmes()関数を別スレッドで実行して、SSPのエラーを回避するためだけの関数
+	_create_thread("_popmes" , message) ;
+}
