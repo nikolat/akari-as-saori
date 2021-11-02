@@ -1,27 +1,27 @@
-//–¢À‘•:azv2json, json2azv, sprintf
+//æœªå®Ÿè£…:azv2json, json2azv, sprintf
 
 int abspath()
-{// Argument0: ƒtƒ@ƒCƒ‹–¼@¦akari.dll‚Æ“¯‚¶ƒfƒBƒŒƒNƒgƒŠ‘O’ñ‚Ì–Í—l
- // Result:    â‘ÎƒpƒX
+{// Argument0: ãƒ•ã‚¡ã‚¤ãƒ«åã€€â€»akari.dllã¨åŒã˜ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªå‰æã®æ¨¡æ§˜
+ // Result:    çµ¶å¯¾ãƒ‘ã‚¹
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _abspath(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int acos()
-{// Argument0: —]Œ·@¦-1`1
- // Result:    Šp“x(rad)
+{// Argument0: ä½™å¼¦ã€€â€»-1ï½1
+ // Result:    è§’åº¦(rad)
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _acos((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int arystr()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦‹\áÔiarystr–¢g—pj¦
- // Argument0: •¶š—ñ
- // Argument1: ‹æØ‚èšiÈ—ªu,vj
- // Result   : •¶š—ñ‚©‚ç‹æØ‚èš‚ğæ‚è‹‚Á‚½•¶š—ñ
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»æ¬ºçï¼ˆarystræœªä½¿ç”¨ï¼‰â€»
+ // Argument0: æ–‡å­—åˆ—
+ // Argument1: åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ,ã€ï¼‰
+ // Result   : æ–‡å­—åˆ—ã‹ã‚‰åŒºåˆ‡ã‚Šå­—ã‚’å–ã‚Šå»ã£ãŸæ–‡å­—åˆ—
 	string sep ;
 	if((string)REQ["ARGS"][1] != "")	sep = REQ["ARGS"][1] ;
 	RES["RESULT"] = _strreplace(REQ["ARGS"][0] , sep , "") ;
@@ -29,10 +29,10 @@ int arystr()
 	return 1 ;
 }
 int aryvn()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // Argument0: •¶š—ñ
- // Argument1: ‹æØ‚èšiÈ—ªu,vj
- // Result   : •¶š—ñ‚ğ‹æØ‚èš‚Å•ªŠ„‚µ‚½‚É‚Å‚«‚é‹æŠÔ‚Ì”
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // Argument0: æ–‡å­—åˆ—
+ // Argument1: åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ,ã€ï¼‰
+ // Result   : æ–‡å­—åˆ—ã‚’åŒºåˆ‡ã‚Šå­—ã§åˆ†å‰²ã—ãŸæ™‚ã«ã§ãã‚‹åŒºé–“ã®æ•°
 	string sep ;
 	if((string)REQ["ARGS"][1] != "")	sep = REQ["ARGS"][1] ;
 	RES["RESULT"] = _aryvn(_strsplit(REQ["ARGS"][0] , sep)) ;
@@ -40,64 +40,64 @@ int aryvn()
 	return 1 ;
 }
 int asin()
-{// Argument0: ³Œ·@¦-1`1
- // Result:    Šp“x(rad)
+{// Argument0: æ­£å¼¦ã€€â€»-1ï½1
+ // Result:    è§’åº¦(rad)
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _asin((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int atan()
-{// Argument0: ³Ú
- // Result   : Šp“x(rad)
+{// Argument0: æ­£æ¥
+ // Result   : è§’åº¦(rad)
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _atan((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int atan2()
-{// Argument0: ³Ú•ª•êiyÀ•Wj
- // Argument1: ³Ú•ªqixÀ•Wj
- // Result   : Šp“x(rad)
+{// Argument0: æ­£æ¥åˆ†æ¯ï¼ˆyåº§æ¨™ï¼‰
+ // Argument1: æ­£æ¥åˆ†å­ï¼ˆxåº§æ¨™ï¼‰
+ // Result   : è§’åº¦(rad)
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil)	return -1 ;
 	RES["RESULT"] = _atan((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int base64encode()
-{// Argument0: •¶š—ñ
- // Result   : base64ƒGƒ“ƒR[ƒh‚³‚ê‚½•¶š—ñ
+{// Argument0: æ–‡å­—åˆ—
+ // Result   : base64ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã•ã‚ŒãŸæ–‡å­—åˆ—
 	RES["RESULT"] = _base64encode(REQ["ARGS"][0]);
 
 	return 1 ;
 }
 int base64decode()
-{// Argument0: base64ƒGƒ“ƒR[ƒh‚³‚ê‚½•¶š—ñ
- // Result   : •¶š—ñ
+{// Argument0: base64ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã•ã‚ŒãŸæ–‡å­—åˆ—
+ // Result   : æ–‡å­—åˆ—
 	RES["RESULT"] = _base64decode(REQ["ARGS"][0]);
 
 	return 1 ;
 }
 int bytechar()
-{// Argument0: ®”i16i”[0x~],2i”[0b~]‰Âj
- // Result   : ‘Î‰‚·‚éƒoƒCƒg’l
- // ˆø”‚ª”’lˆÈŠO‚¾‚ÆƒoƒCƒg’l0iNULj‚ª•Ô‚é‚Ì‚ÅA—p–@‚É‚æ‚Á‚Ä‚Í—v’ˆÓ
+{// Argument0: æ•´æ•°ï¼ˆ16é€²æ•°[0x~],2é€²æ•°[0b~]å¯ï¼‰
+ // Result   : å¯¾å¿œã™ã‚‹ãƒã‚¤ãƒˆå€¤
+ // å¼•æ•°ãŒæ•°å€¤ä»¥å¤–ã ã¨ãƒã‚¤ãƒˆå€¤0ï¼ˆNULï¼‰ãŒè¿”ã‚‹ã®ã§ã€ç”¨æ³•ã«ã‚ˆã£ã¦ã¯è¦æ³¨æ„
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _bytechar((int)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int cdsscontrol()
-{// ¦Œ»ó–³ˆÓ–¡¦
+{// â€»ç¾çŠ¶ç„¡æ„å‘³â€»
 	_cdsscontrol((int)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int colorselect()
-{// ¦ƒ_ƒCƒAƒƒO“WŠJ’†SSP‚ÍinfoƒŒƒxƒ‹‚ÌƒGƒ‰[‚ğ’Ê’m‚µ‘±‚¯‚Ü‚·‚ªd—l‚Å‚·¦
- // ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: ƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚Ìƒ^ƒCƒgƒ‹
- // Result   : u,v‹æØ‚è‚Å‚»‚ê‚¼‚ê0`255‚ÌR,G,B’l
+{// â€»ãƒ€ã‚¤ã‚¢ãƒ­ã‚°å±•é–‹ä¸­SSPã¯infoãƒ¬ãƒ™ãƒ«ã®ã‚¨ãƒ©ãƒ¼ã‚’é€šçŸ¥ã—ç¶šã‘ã¾ã™ãŒä»•æ§˜ã§ã™â€»
+ // â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã®ã‚¿ã‚¤ãƒˆãƒ«
+ // Result   : ã€Œ,ã€åŒºåˆ‡ã‚Šã§ãã‚Œãã‚Œ0ï½255ã®R,G,Bå€¤
  // Value0   : R
  // Value1   : G
  // Value2   : B
@@ -108,27 +108,27 @@ int colorselect()
 	return 1 ;
 }
 int cos()
-{// Argument0: Šp“x(rad)
- // Result   : —]Œ·
+{// Argument0: è§’åº¦(rad)
+ // Result   : ä½™å¼¦
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _cos((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int cosh()
-{// Argument0: Šp“x(rad)
- // Result   : ‘o‹Èü—]Œ·
+{// Argument0: è§’åº¦(rad)
+ // Result   : åŒæ›²ç·šä½™å¼¦
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _cosh((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int createthread()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦ÀsæŠÖ”‚É”z—ñŒ`®‚Åˆø”‚ğ“n‚·‚Ì‚Å’ˆÓ
- // Argument0: •ÊƒXƒŒƒbƒh‚ÅÀs‚·‚é“”‚ÌŠÖ”
- // Argument*: ŠÖ”ˆø”‚ğ‹æØ‚èš‚Å—ñ‹“‚µ‚½‚à‚Ì
- // Result   : ƒXƒŒƒbƒhì¬‚É¬Œ÷1,¸”s0
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»å®Ÿè¡Œå…ˆé–¢æ•°ã«é…åˆ—å½¢å¼ã§å¼•æ•°ã‚’æ¸¡ã™ã®ã§æ³¨æ„
+ // Argument0: åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ã§å®Ÿè¡Œã™ã‚‹ç¯ã®é–¢æ•°
+ // Argument*: é–¢æ•°å¼•æ•°ã‚’åŒºåˆ‡ã‚Šå­—ã§åˆ—æŒ™ã—ãŸã‚‚ã®
+ // Result   : ã‚¹ãƒ¬ãƒƒãƒ‰ä½œæˆã«æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	string func = REQ["ARGS"][0] ;
 	REQ["ARGS"][0] = nil ;
 	RES["RESULT"] = _create_thread(func , REQ["ARGS"]) ;
@@ -142,11 +142,11 @@ int dbclose()
 	return 1 ;
 }
 int dbcsv2table()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // Argument0: CSVƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Argument1: ƒe[ƒuƒ‹–¼
- // Argument2: ƒe[ƒuƒ‹Še—ñ‚Ì•û‚ğƒJƒ“ƒ}‹æØ‚è‚ÅBiÈ—ª‘S—ñtextj
- // Argument3: 1—ñ–Ú‚Éid‚ÆŒ¾‚¤–¼‘O‚Ìs‚ğì‚é‚È‚ç1,‚³‚à‚È‚­‚Î0
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // Argument0: CSVãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: ãƒ†ãƒ¼ãƒ–ãƒ«å
+ // Argument2: ãƒ†ãƒ¼ãƒ–ãƒ«å„åˆ—ã®æ–¹ã‚’ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§ã€‚ï¼ˆçœç•¥æ™‚å…¨åˆ—textï¼‰
+ // Argument3: 1åˆ—ç›®ã«idã¨è¨€ã†åå‰ã®è¡Œã‚’ä½œã‚‹ãªã‚‰1,ã•ã‚‚ãªãã°0
 	_dbcsv2table(
 		  REQ["ARGS"][0]
 		, REQ["ARGS"][1]
@@ -157,20 +157,20 @@ int dbcsv2table()
 	return 1 ;
 }
 int dbopen()
-{// Argument0: “WŠJ/ì¬‚·‚éƒf[ƒ^ƒx[ƒX‚ÌƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1,¸”s0
+{// Argument0: å±•é–‹/ä½œæˆã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã®ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _dbopen(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int dbquery()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: open’†ƒf[ƒ^ƒx[ƒX‚É‘Î‚·‚éƒNƒGƒŠ
- // Argument1: €–ÚŠÔ‚Ì‹æØ‚èšiÈ—ªu,vj
- // Argument2: —ñ–¼‚Æ’l‚ÌŠÔ‚Ì‹æØ‚èšiÈ—ªu:vj
- // Result   : ‹ó•¶š—ñ
- // Value*   : —ñ–¼:’l,—ñ–¼:’lcc@‚ÌŒ`‚Å1s‚¸‚Â
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: openä¸­ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«å¯¾ã™ã‚‹ã‚¯ã‚¨ãƒª
+ // Argument1: é …ç›®é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ,ã€ï¼‰
+ // Argument2: åˆ—åã¨å€¤ã®é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ:ã€ï¼‰
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : åˆ—å:å€¤,åˆ—å:å€¤â€¦â€¦ã€€ã®å½¢ã§1è¡Œãšã¤
 	array result ;
 	array sep = {"," , ":"} ;
 	if((string)REQ["ARGS"][0] != "")	sep[0] ;
@@ -185,40 +185,40 @@ int dbquery()
 	return 1 ;
 }
 int dcopy()
-{// Argument0: •¡»Œ³ƒtƒHƒ‹ƒ_ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Argument1: •¡»æƒtƒHƒ‹ƒ_ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1A¸”s0
+{// Argument0: è¤‡è£½å…ƒãƒ•ã‚©ãƒ«ãƒ€ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: è¤‡è£½å…ˆãƒ•ã‚©ãƒ«ãƒ€ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1ã€å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _dcopy(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int dcreate()
-{// Argument0: ƒtƒHƒ‹ƒ_ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1A¸”s0
+{// Argument0: ãƒ•ã‚©ãƒ«ãƒ€ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1ã€å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _dcreate(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int ddelete()
-{// Argument0: ƒtƒHƒ‹ƒ_ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1A¸”s0
+{// Argument0: ãƒ•ã‚©ãƒ«ãƒ€ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1ã€å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _ddelete(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int dickeyget()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: Še—v‘fŠÔ‚ğ‹æØ‚èš1‚ÅAƒL[‚Æ’l‚ğ‹æØ‚èš2‚Å‹æØ‚Á‚½•¶š—ñ
- //            —ájƒL[0:’l0,ƒL[1:’l1,ƒL[2:’l2,...
- // Argument1: ‹æØ‚èš1BŠe—v‘fŠÔ‚Ì‹æØ‚èšiÈ—ªu,vj
- // Argument2: ‹æØ‚èš2BƒL[‚Æ’lŠÔ‚Ì‹æØ‚èšiÈ—ªu:vj
- //            ¦³‹K•\Œ»‚É—p‚¢‚ç‚ê‚é‹L†‚Í”ğ‚¯‚é
- // Result   : ‹ó•¶š—ñ
- // Value*   : ƒL[‚ªˆê‚Â‚¸‚Â
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: å„è¦ç´ é–“ã‚’åŒºåˆ‡ã‚Šå­—1ã§ã€ã‚­ãƒ¼ã¨å€¤ã‚’åŒºåˆ‡ã‚Šå­—2ã§åŒºåˆ‡ã£ãŸæ–‡å­—åˆ—
+ //            ä¾‹ï¼‰ã‚­ãƒ¼0:å€¤0,ã‚­ãƒ¼1:å€¤1,ã‚­ãƒ¼2:å€¤2,...
+ // Argument1: åŒºåˆ‡ã‚Šå­—1ã€‚å„è¦ç´ é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ,ã€ï¼‰
+ // Argument2: åŒºåˆ‡ã‚Šå­—2ã€‚ã‚­ãƒ¼ã¨å€¤é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ:ã€ï¼‰
+ //            â€»æ­£è¦è¡¨ç¾ã«ç”¨ã„ã‚‰ã‚Œã‚‹è¨˜å·ã¯é¿ã‘ã‚‹
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : ã‚­ãƒ¼ãŒä¸€ã¤ãšã¤
 	dict dic ;
 	array sep = {"," , ":" , ","} ;
 	if((string)REQ["ARGS"][1] != "")	sep[0] = REQ["ARGS"][1] ;
@@ -236,21 +236,21 @@ int dickeyget()
 	return 1 ;
 }
 int dicv()
-{// ¦Œ»ó–³ˆÓ–¡¦
+{// â€»ç¾çŠ¶ç„¡æ„å‘³â€»
 	_dicv(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int dicvget()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: Še—v‘fŠÔ‚ğ‹æØ‚èš1‚ÅAƒL[‚Æ’l‚ğ‹æØ‚èš2‚Å‹æØ‚Á‚½•¶š—ñ
- //            —ájƒL[0:’l0,ƒL[1:’l1,ƒL[2:’l2,...
- // Argument1: ‹æØ‚èš1BŠe—v‘fŠÔ‚Ì‹æØ‚èšiÈ—ªu,vj
- // Argument2: ‹æØ‚èš2BƒL[‚Æ’lŠÔ‚Ì‹æØ‚èšiÈ—ªu:vj
- //            ¦³‹K•\Œ»‚É—p‚¢‚ç‚ê‚é‹L†‚Í”ğ‚¯‚é
- // Result   : ‹ó•¶š—ñ
- // Value*   : ’l‚ªˆê‚Â‚¸‚Â
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: å„è¦ç´ é–“ã‚’åŒºåˆ‡ã‚Šå­—1ã§ã€ã‚­ãƒ¼ã¨å€¤ã‚’åŒºåˆ‡ã‚Šå­—2ã§åŒºåˆ‡ã£ãŸæ–‡å­—åˆ—
+ //            ä¾‹ï¼‰ã‚­ãƒ¼0:å€¤0,ã‚­ãƒ¼1:å€¤1,ã‚­ãƒ¼2:å€¤2,...
+ // Argument1: åŒºåˆ‡ã‚Šå­—1ã€‚å„è¦ç´ é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ,ã€ï¼‰
+ // Argument2: åŒºåˆ‡ã‚Šå­—2ã€‚ã‚­ãƒ¼ã¨å€¤é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ:ã€ï¼‰
+ //            â€»æ­£è¦è¡¨ç¾ã«ç”¨ã„ã‚‰ã‚Œã‚‹è¨˜å·ã¯é¿ã‘ã‚‹
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : å€¤ãŒä¸€ã¤ãšã¤
 	dict dic ;
 	array sep = {"," , ":" , ","} ;
 	if((string)REQ["ARGS"][1] != "")	sep[0] = REQ["ARGS"][1] ;
@@ -268,13 +268,13 @@ int dicvget()
 	return 1 ;
 }
 int dicvn()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: Še—v‘fŠÔ‚ğ‹æØ‚èš1‚ÅAƒL[‚Æ’l‚ğ‹æØ‚èš2‚Å‹æØ‚Á‚½•¶š—ñ
- //            —ájƒL[0:’l0,ƒL[1:’l1,ƒL[2:’l2,...
- // Argument1: ‹æØ‚èš1BŠe—v‘fŠÔ‚Ì‹æØ‚èšiÈ—ªu,vj
- // Argument2: ‹æØ‚èš2BƒL[‚Æ’lŠÔ‚Ì‹æØ‚èšiÈ—ªu:vj
- // Result   : —v‘f”
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: å„è¦ç´ é–“ã‚’åŒºåˆ‡ã‚Šå­—1ã§ã€ã‚­ãƒ¼ã¨å€¤ã‚’åŒºåˆ‡ã‚Šå­—2ã§åŒºåˆ‡ã£ãŸæ–‡å­—åˆ—
+ //            ä¾‹ï¼‰ã‚­ãƒ¼0:å€¤0,ã‚­ãƒ¼1:å€¤1,ã‚­ãƒ¼2:å€¤2,...
+ // Argument1: åŒºåˆ‡ã‚Šå­—1ã€‚å„è¦ç´ é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ,ã€ï¼‰
+ // Argument2: åŒºåˆ‡ã‚Šå­—2ã€‚ã‚­ãƒ¼ã¨å€¤é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ:ã€ï¼‰
+ // Result   : è¦ç´ æ•°
 	dict dic ;
 	array sep = {"," , ":"} ;
 	if((string)REQ["ARGS"][1] != "")	sep[0] = REQ["ARGS"][1] ;
@@ -291,9 +291,9 @@ int dicvn()
 	return 1 ;
 }
 int dsstp()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // Argument*  : DSSTPƒŠƒNƒGƒXƒg‚ğ‚Ps‚¸‚Â‚P‚Â‚Ìˆø”‚É
- // ArgumentEND: i––”ö‚Ìˆø”jdsstp‘—M‘ÎÛ‚ÌƒEƒBƒ“ƒhƒEƒnƒ“ƒhƒ‹
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // Argument*  : DSSTPãƒªã‚¯ã‚¨ã‚¹ãƒˆã‚’ï¼‘è¡Œãšã¤ï¼‘ã¤ã®å¼•æ•°ã«
+ // ArgumentEND: ï¼ˆæœ«å°¾ã®å¼•æ•°ï¼‰dsstpé€ä¿¡å¯¾è±¡ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒãƒ³ãƒ‰ãƒ«
 	int   argv = _aryvn(REQ["ARGS"]) ;
 	int   hwnd = REQ["ARGS"][argv - 1] ;
 	REQ["ARGS"][argv - 1] = nil ;
@@ -304,16 +304,16 @@ int dsstp()
 	return 1 ;
 }
 int etime()
-{// ¦1969”N12Œ1“ú9ŠîZi——R•s–¾j
- // @‚»‚ê‚æ‚è‰ß‹‚¾‚Æ-1‚ª‹A‚é
- // ¦‘S‚Ä‚Ìˆø”‚ğÈ—ª‚µ‚½ê‡‚ÍŒ»İ‚Ì—ï‚ğ‹‚ß‚é
- // Argument0: ”N@È—ª0@
- // Argument1: Œ@È—ª0
- // Argument2: “ú@È—ª0
- // Argument3: @È—ª0
- // Argument4: •ª@È—ª0
- // Argument5: •b@È—ª0
- // Result   : —ï
+{// â€»1969å¹´12æœˆ1æ—¥9æ™‚åŸºç®—ï¼ˆç†ç”±ä¸æ˜ï¼‰
+ // ã€€ãã‚Œã‚ˆã‚Šéå»ã ã¨-1ãŒå¸°ã‚‹
+ // â€»å…¨ã¦ã®å¼•æ•°ã‚’çœç•¥ã—ãŸå ´åˆã¯ç¾åœ¨ã®æš¦æ™‚åˆ»ã‚’æ±‚ã‚ã‚‹
+ // Argument0: å¹´ã€€çœç•¥æ™‚0ã€€
+ // Argument1: æœˆã€€çœç•¥æ™‚0
+ // Argument2: æ—¥ã€€çœç•¥æ™‚0
+ // Argument3: æ™‚ã€€çœç•¥æ™‚0
+ // Argument4: åˆ†ã€€çœç•¥æ™‚0
+ // Argument5: ç§’ã€€çœç•¥æ™‚0
+ // Result   : æš¦æ™‚åˆ»
 	if(_aryvn(REQ["ARGS"]) > 0){
 		RES["RESULT"] = _etime(
 				  (int)_han2zen(REQ["ARGS"][0])
@@ -327,58 +327,58 @@ int etime()
 	else                       {
 		dict now = _gettime() ;
 		RES["ARGS"] = _etime (
-				  now["”N"]
-				, now["Œ"]
-				, now["“ú"]
-				, now[""]
-				, now["•ª"]
-				, now["•b"]
+				  now["å¹´"]
+				, now["æœˆ"]
+				, now["æ—¥"]
+				, now["æ™‚"]
+				, now["åˆ†"]
+				, now["ç§’"]
 			) ;
 	}
 
 	return 1 ;
 }
 int exp()
-{// Argument0: w”
- // Result   : ƒlƒCƒsƒA”e‚Ì[ˆø”0]æ
+{// Argument0: æŒ‡æ•°
+ // Result   : ãƒã‚¤ãƒ”ã‚¢æ•°eã®[å¼•æ•°0]ä¹—
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _exp((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int fabs()
-{// Argument0: À”
- // Result   : â‘Î’l
+{// Argument0: å®Ÿæ•°
+ // Result   : çµ¶å¯¾å€¤
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _fabs((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int fcopy()
-{// Argument0: •¡»Œ³ƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Argument1: •¡»æƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1A¸”s0
+{// Argument0: è¤‡è£½å…ƒãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: è¤‡è£½å…ˆãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1ã€å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil)	return -1 ;
 	RES["RESULT"] = _fcopy(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int fdelete()
-{// Argument0: ƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1A¸”s0
+{// Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1ã€å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _fdelete(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int fenum()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: ƒtƒHƒ‹ƒ_ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Argument1: ‹æØ‚èšiÈ—ªu:vj
- // Result   : ‹ó•¶š—ñ
- // Value0   : file–¼
- // Value1   : folder–¼
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: ãƒ•ã‚©ãƒ«ãƒ€ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã€Œ:ã€ï¼‰
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value0   : fileå
+ // Value1   : folderå
 	string sep = ":" ;
 	if(REQ["ARGS"][1])	sep = REQ["ARGS"][1] ;
 
@@ -388,43 +388,43 @@ int fenum()
 	return 1 ;
 }
 int fileexecute()
-{// Argument0: ƒtƒ@ƒCƒ‹i’T¸‚ ‚èj
- // Argument1: ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”
+{// Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ï¼ˆæ¢æŸ»ã‚ã‚Šï¼‰
+ // Argument1: ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°
 	_file_execute(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int filemd5()
-{// Argument0: ƒtƒ@ƒCƒ‹ƒpƒX
- // Result   : w’è‚µ‚½ƒtƒ@ƒCƒ‹‚Ìmd5’l
+{// Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+ // Result   : æŒ‡å®šã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã®md5å€¤
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _filemd5(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int floor()
-{// Argument0: À”
- // Result   : [ˆø”0]‚ğ•‰‚Ì–³ŒÀ‘å•ûŒü‚ÉŠÛ‚ß‚½®”
+{// Argument0: å®Ÿæ•°
+ // Result   : [å¼•æ•°0]ã‚’è² ã®ç„¡é™å¤§æ–¹å‘ã«ä¸¸ã‚ãŸæ•´æ•°
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _floor((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int fmove()
-{// Argument0: ˆÚ“®Œ³ƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Argument1: ˆÚ“®æƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1A¸”s0
+{// Argument0: ç§»å‹•å…ƒãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: ç§»å‹•å…ˆãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1ã€å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil)	return -1 ;
 	RES["RESULT"] = _fmove(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int fncstr()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦ÀsæŠÖ”‚É”z—ñŒ`®‚Åˆø”‚ğ“n‚·‚Ì‚Å’ˆÓ
- // Argument0: •ÊƒXƒŒƒbƒh‚ÅÀs‚·‚é“”‚ÌŠÖ”
- // Argument*: ŠÖ”ˆø”‚ğ‹æØ‚èš‚Å—ñ‹“‚µ‚½‚à‚Ì
- // Result   : ƒXƒŒƒbƒhì¬‚É¬Œ÷1,¸”s0
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»å®Ÿè¡Œå…ˆé–¢æ•°ã«é…åˆ—å½¢å¼ã§å¼•æ•°ã‚’æ¸¡ã™ã®ã§æ³¨æ„
+ // Argument0: åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ã§å®Ÿè¡Œã™ã‚‹ç¯ã®é–¢æ•°
+ // Argument*: é–¢æ•°å¼•æ•°ã‚’åŒºåˆ‡ã‚Šå­—ã§åˆ—æŒ™ã—ãŸã‚‚ã®
+ // Result   : ã‚¹ãƒ¬ãƒƒãƒ‰ä½œæˆã«æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	string func = REQ["ARGS"][0] ;
 	REQ["ARGS"][0] = nil ;
 	RES["RESULT"] = _fncstr(func , REQ["ARGS"]) ;
@@ -432,35 +432,35 @@ int fncstr()
 	return 1 ;
 }
 int folderselect()
-{// Argument0: ƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚Ìƒ^ƒCƒgƒ‹
- // Argument1: ƒfƒtƒHƒ‹ƒgƒtƒHƒ‹ƒ_‚Ìâ‘ÎƒpƒXi––”ö‚É\‚ğ‚Â‚¯‚È‚¢jBÈ—ªakari.dll‚Ì‚ ‚éƒtƒHƒ‹ƒ_
- // Result   : ‘I‘ğ‚µ‚½ƒtƒHƒ‹ƒ_‚Ìâ‘ÎƒpƒX
+{// Argument0: ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã®ã‚¿ã‚¤ãƒˆãƒ«
+ // Argument1: ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ•ã‚©ãƒ«ãƒ€ã®çµ¶å¯¾ãƒ‘ã‚¹ï¼ˆæœ«å°¾ã«\ã‚’ã¤ã‘ãªã„ï¼‰ã€‚çœç•¥æ™‚akari.dllã®ã‚ã‚‹ãƒ•ã‚©ãƒ«ãƒ€
+ // Result   : é¸æŠã—ãŸãƒ•ã‚©ãƒ«ãƒ€ã®çµ¶å¯¾ãƒ‘ã‚¹
 	RES["RESULT"] = _folderselect(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int ftpcommand()
-{// Argument0: FTPƒRƒ}ƒ“ƒh
- // Result   : ƒRƒ}ƒ“ƒh‚É‘Î‚·‚éƒŒƒXƒ|ƒ“ƒX
+{// Argument0: FTPã‚³ãƒãƒ³ãƒ‰
+ // Result   : ã‚³ãƒãƒ³ãƒ‰ã«å¯¾ã™ã‚‹ãƒ¬ã‚¹ãƒãƒ³ã‚¹
 	RES["RESULT"] = _ftp_command(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int ftpdownload()
-{// Argument0: ƒ_ƒEƒ“ƒ[ƒh‚·‚éƒtƒ@ƒCƒ‹ƒpƒX
- // Argument1: ƒ[ƒJƒ‹‚Ìƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ¬Œ÷1,¸”s0
+{// Argument0: ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+ // Argument1: ãƒ­ãƒ¼ã‚«ãƒ«ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	if((string)REQ["ARGS"][0] == "" || (string)REQ["ARGS"][1] == "")	return -1 ;
 	RES["RESULT"] = _ftp_download(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int ftplogin()
-{// Argument0: ƒT[ƒo–¼
- // Argument1: ƒ†[ƒU–¼
- // Argument2: ƒpƒXƒ[ƒh
- // Argument3: ƒ|[ƒg”Ô†iÈ—ª21j
- // Result   : ¬Œ÷1,¸”s0
+{// Argument0: ã‚µãƒ¼ãƒå
+ // Argument1: ãƒ¦ãƒ¼ã‚¶å
+ // Argument2: ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+ // Argument3: ãƒãƒ¼ãƒˆç•ªå·ï¼ˆçœç•¥æ™‚21ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil || REQ["ARGS"][2] == nil)	return -1 ;
 	int port = 21 ;
 	if(REQ["ARGS"][3] != nil && REQ["ARGS"][3] != "")	port = (int)_zen2han(REQ["ARGS"][3]) ;
@@ -469,24 +469,24 @@ int ftplogin()
 	return 1 ;
 }
 int ftplogout()
-{// Result   : ¬Œ÷1,¸”s0
+{// Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _ftp_logout() ;
 
 	return 1 ;
 }
 int ftpupload()
-{// Argument0: ƒ[ƒJƒ‹‚Ìƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Argument1: ƒAƒbƒvƒ[ƒhæ‚Ìƒtƒ@ƒCƒ‹ƒpƒX
- // Result   : ¬Œ÷1,¸”s0
+{// Argument0: ãƒ­ãƒ¼ã‚«ãƒ«ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰å…ˆã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	if((string)REQ["ARGS"][0] == "" || (string)REQ["ARGS"][1] == "")	return -1 ;
 	RES["RESULT"] = _ftp_download(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int getwindowslist()
-{//¦–ß‚è’lŒ`®’ˆÓ¦
- // Result: ‹ó•¶š—ñ
- // Value*: ƒEƒBƒ“ƒhƒE–¼:ƒnƒ“ƒhƒ‹’l@‚ÌŒ`®‚Åˆê‚Â‚¸‚Â
+{//â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Result: ç©ºæ–‡å­—åˆ—
+ // Value*: ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å:ãƒãƒ³ãƒ‰ãƒ«å€¤ã€€ã®å½¢å¼ã§ä¸€ã¤ãšã¤
 	dict list = _get_windowslist();
 	array key   = _dickeyget(list) ;
 	array value = _dicvget(list) ;
@@ -500,107 +500,107 @@ int getwindowslist()
 	return 1 ;
 }
 int getfmo()
-{// Result: ‹ó•¶š—ñ
- // Value*: SakuraFMO’l@CRLF‚²‚Æ‚É1‚Â
+{// Result: ç©ºæ–‡å­—åˆ—
+ // Value*: SakuraFMOå€¤ã€€CRLFã”ã¨ã«1ã¤
 	RES["VALUE"] = _getfmo() ;
 
 	return 1 ;
 }
 int getghosthwnd()
-{// Argument0: ƒfƒXƒNƒgƒbƒv‚ÉŒ»İ—§‚Á‚Ä‚¢‚éƒS[ƒXƒg‚Ìsakura‘¤–¼
- // Result   : ƒEƒBƒ“ƒhƒEƒnƒ“ƒhƒ‹
+{// Argument0: ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã«ç¾åœ¨ç«‹ã£ã¦ã„ã‚‹ã‚´ãƒ¼ã‚¹ãƒˆã®sakuraå´å
+ // Result   : ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒãƒ³ãƒ‰ãƒ«
 	RES["RESULT"] = _getghosthwnd(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int getposwindowname()
-{// Argument0: ƒXƒNƒŠ[ƒ“xÀ•W
- // Argument1: ƒXƒNƒŠ[ƒ“yÀ•W
- // Result   : w’èÀ•W‚É‚ ‚éƒEƒBƒ“ƒhƒE‚Ì–¼‘O
+{// Argument0: ã‚¹ã‚¯ãƒªãƒ¼ãƒ³xåº§æ¨™
+ // Argument1: ã‚¹ã‚¯ãƒªãƒ¼ãƒ³yåº§æ¨™
+ // Result   : æŒ‡å®šåº§æ¨™ã«ã‚ã‚‹ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®åå‰
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil)	return -1 ;
 	RES["RESULT"] = _getposwindowname(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int gettime()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Result: ”N
- // Value0: Œ
- // Value1: “ú
- // Value2: 
- // Value3: •ª
- // Value4: •b
- // Value5: ƒ~ƒŠ•b
- // Value6: —j“ú
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Result: å¹´
+ // Value0: æœˆ
+ // Value1: æ—¥
+ // Value2: æ™‚
+ // Value3: åˆ†
+ // Value4: ç§’
+ // Value5: ãƒŸãƒªç§’
+ // Value6: æ›œæ—¥
 	dict time = _gettype() ;
-	RES["VALUE"] = {time["”N"] , time["Œ"] , time["“ú"] , time[""] , time["•ª"] , time["•b"] , time["ƒ~ƒŠ•b"] , time["T"]} ;
+	RES["VALUE"] = {time["å¹´"] , time["æœˆ"] , time["æ—¥"] , time["æ™‚"] , time["åˆ†"] , time["ç§’"] , time["ãƒŸãƒªç§’"] , time["é€±"]} ;
 
 	return 1 ;
 }
 int gettype()
-{// ¦Œ»ó–³ˆÓ–¡¦
+{// â€»ç¾çŠ¶ç„¡æ„å‘³â€»
 	RES["RESULT"] = _gettype(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int han2zen()
-{// Argument0: •¶š—ñ
- // Result   : ƒAƒ‹ƒtƒ@ƒxƒbƒgE‹L†‚È‚Ç‚ğ”¼Šp‰»‚µ‚½•¶š—ñ
+{// Argument0: æ–‡å­—åˆ—
+ // Result   : ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆãƒ»è¨˜å·ãªã©ã‚’åŠè§’åŒ–ã—ãŸæ–‡å­—åˆ—
 	RES["RESULT"] = _han2zen(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int httpdownload()
 {// Argument0: URL
- // Argument1: ƒtƒ@ƒCƒ‹–¼iâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ƒtƒ@ƒCƒ‹—e—Ê(byte)
+ // Argument1: ãƒ•ã‚¡ã‚¤ãƒ«åï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : ãƒ•ã‚¡ã‚¤ãƒ«å®¹é‡(byte)
 	RES["RESULT"] = _http_download(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int httpget()
-{// Argument0: URLiƒeƒLƒXƒgŒ`®‚Ì‚İj
- // Argument1: •¶šƒR[ƒhisjis|eucjp|utf8|jisjiÈ—ª‚Ísjisj
- // Result   : ‹ó•¶š
- // Value*   : “Ç‚İæ‚Á‚½ƒeƒLƒXƒgˆêsˆê‚Â‚¸‚Â
+{// Argument0: URLï¼ˆãƒ†ã‚­ã‚¹ãƒˆå½¢å¼ã®ã¿ï¼‰
+ // Argument1: æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆsjis|eucjp|utf8|jisï¼‰ï¼ˆçœç•¥æ™‚ã¯sjisï¼‰
+ // Result   : ç©ºæ–‡å­—
+ // Value*   : èª­ã¿å–ã£ãŸãƒ†ã‚­ã‚¹ãƒˆä¸€è¡Œä¸€ã¤ãšã¤
 	if(REQ["ARGS"][0] != nil)	return -1 ;
 	RES["RESULT"] = _httpget(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int hypot()
-{// Argument0: À”
- // Argument1: À”
- // Result   : ˆø”‚Ì“ñæ‚Ì˜a‚Ì•½•ûª
- //            Ë‚»‚ê‚¼‚êˆø”‚Ì’·‚³‚ğ‚Â“ñ•Ó‚ª¬‚·’¼Šp‚É‘Î‚·‚éÎ•Ó’·
+{// Argument0: å®Ÿæ•°
+ // Argument1: å®Ÿæ•°
+ // Result   : å¼•æ•°ã®äºŒä¹—ã®å’Œã®å¹³æ–¹æ ¹
+ //            â‡’ãã‚Œãã‚Œå¼•æ•°ã®é•·ã•ã‚’æŒã¤äºŒè¾ºãŒæˆã™ç›´è§’ã«å¯¾ã™ã‚‹æ–œè¾ºé•·
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil)	return -1 ;
 	RES["RESULT"] = _hypot((double)_zen2han(REQ["ARGS"][0]) , (double)_zen2han(REQ["ARGS"][1])) ;
 
 	return 1 ;
 }
 int isfile()
-{// Argument0: ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : w’è‚µ‚½ƒpƒX‚Ìƒtƒ@ƒCƒ‹/ƒtƒHƒ‹ƒ_‚ª‘¶İ‚·‚ê‚Î1,‚È‚¯‚ê‚Î0
+{// Argument0: ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : æŒ‡å®šã—ãŸãƒ‘ã‚¹ã®ãƒ•ã‚¡ã‚¤ãƒ«/ãƒ•ã‚©ãƒ«ãƒ€ãŒå­˜åœ¨ã™ã‚Œã°1,ãªã‘ã‚Œã°0
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _isfile(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int joypadstate()
-{// ¦–ß‚è’nŒ`®’ˆÓ¦
- // Result   : ‹ó•¶š—ñ
- // Value0   : up‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value1   : down‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value2   : right‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value3   : left‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value4   : button0‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value5   : button1‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value6   : button2‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value7   : button3‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value8   : button4‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value9   : button5‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value10  : button6‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
- // Value11  : button7‚ª‰Ÿ‚³‚ê‚Ä‚¢‚é‚©i0/1j
+{// â€»æˆ»ã‚Šåœ°å½¢å¼æ³¨æ„â€»
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value0   : upãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value1   : downãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value2   : rightãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value3   : leftãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value4   : button0ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value5   : button1ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value6   : button2ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value7   : button3ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value8   : button4ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value9   : button5ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value10  : button6ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
+ // Value11  : button7ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹ï¼ˆ0/1ï¼‰
 
 	dict result = _joypadstate();
 	RES["VALUE"] = (result["up"]
@@ -622,8 +622,8 @@ int joypadstate()
 
 }
 int keystate()
-{// Argument0: ‰¼‘zƒL[ƒR[ƒhi•¶š—ñ‚Ì’è”‚Ü‚½‚Í”šj
- // Result: ‰Ÿ‚³‚ê‚Ä‚¢‚é‚©”Û‚©i0/1j
+{// Argument0: ä»®æƒ³ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ï¼ˆæ–‡å­—åˆ—ã®å®šæ•°ã¾ãŸã¯æ•°å­—ï¼‰
+ // Result: æŠ¼ã•ã‚Œã¦ã„ã‚‹ã‹å¦ã‹ï¼ˆ0/1ï¼‰
 	if(_regex_match(REQ["ARGS"][0], "\d+")) {
 		REQ["ARGS"][0] = (int)REQ["ARGS"][0];
 	}
@@ -632,32 +632,32 @@ int keystate()
 	return 1 ;
 }
 int log()
-{// Argument0: À”iw”j
- // Result   : [ˆø”0]‚Ì©‘R‘Î”
+{// Argument0: å®Ÿæ•°ï¼ˆæŒ‡æ•°ï¼‰
+ // Result   : [å¼•æ•°0]ã®è‡ªç„¶å¯¾æ•°
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _log((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int log10()
-{// Argument0: À”iw”j
- // Result   : [ˆø”0]‚Ìí—p‘Î”
+{// Argument0: å®Ÿæ•°ï¼ˆæŒ‡æ•°ï¼‰
+ // Result   : [å¼•æ•°0]ã®å¸¸ç”¨å¯¾æ•°
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _log((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int mailsend()
-{// Argument0: ƒzƒXƒg–¼
- // Argument1: fromƒ[ƒ‹ƒAƒhƒŒƒX
- // Argument2: toƒ[ƒ‹ƒAƒhƒŒƒX
- // Argument3: Œ–¼
- // Argument4: “à—e
- // Argument5: ƒ|[ƒg”Ô†
- // Argument6: ”FØƒ^ƒCƒv(AUTH_NONE|AUTH_CRAM_MD5|AUTH_CRAM_SHA1|AUTH_LOGIN|AUTH_PLAIN)
- // Argument7: ƒ†[ƒU–¼
- // Argument8: ƒpƒXƒ[ƒh
- // Result   : ‘—MŒ‹‰ÊƒƒbƒZ[ƒW
+{// Argument0: ãƒ›ã‚¹ãƒˆå
+ // Argument1: fromãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹
+ // Argument2: toãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹
+ // Argument3: ä»¶å
+ // Argument4: å†…å®¹
+ // Argument5: ãƒãƒ¼ãƒˆç•ªå·
+ // Argument6: èªè¨¼ã‚¿ã‚¤ãƒ—(AUTH_NONE|AUTH_CRAM_MD5|AUTH_CRAM_SHA1|AUTH_LOGIN|AUTH_PLAIN)
+ // Argument7: ãƒ¦ãƒ¼ã‚¶å
+ // Argument8: ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+ // Result   : é€ä¿¡çµæœãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	RES["RESULT"] = _mail_send(
 		  REQ["ARGS"][0]
 		, REQ["ARGS"][1]
@@ -673,22 +673,22 @@ int mailsend()
 	return 1 ;
 }
 int maildelete()
-{// Argument0: w’è‚µ‚½ID‚Ìƒ[ƒ‹‚ğíœ
+{// Argument0: æŒ‡å®šã—ãŸIDã®ãƒ¡ãƒ¼ãƒ«ã‚’å‰Šé™¤
 	_maildelete(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int mailget()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: ƒ[ƒ‹ƒT[ƒo
- // Argument1: ƒ[ƒ‹ƒAƒhƒŒƒX
- // Argument2: ƒpƒXƒ[ƒh
- // Argument3: æ“¾‚·‚éƒ[ƒ‹”Ô†
- // Argument4: ƒ|[ƒg”Ô†iÈ—ª110j
- // Result   : ƒ[ƒ‹ƒ{ƒbƒNƒX“à‚Ìƒ[ƒ‹”
- // Value0   : óM‚µ‚½“ú•t
- // Value1   : ‘—MÒƒAƒhƒŒƒX
- // Value*   : –{•¶1s‚¸‚Âˆê‚Â‚É
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: ãƒ¡ãƒ¼ãƒ«ã‚µãƒ¼ãƒ
+ // Argument1: ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹
+ // Argument2: ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+ // Argument3: å–å¾—ã™ã‚‹ãƒ¡ãƒ¼ãƒ«ç•ªå·
+ // Argument4: ãƒãƒ¼ãƒˆç•ªå·ï¼ˆçœç•¥æ™‚110ï¼‰
+ // Result   : ãƒ¡ãƒ¼ãƒ«ãƒœãƒƒã‚¯ã‚¹å†…ã®ãƒ¡ãƒ¼ãƒ«æ•°
+ // Value0   : å—ä¿¡ã—ãŸæ—¥ä»˜
+ // Value1   : é€ä¿¡è€…ã‚¢ãƒ‰ãƒ¬ã‚¹
+ // Value*   : æœ¬æ–‡1è¡Œãšã¤ä¸€ã¤ã«
 	int port = 110 ;
 	dict result ;
 	if(REQ["ARGS"][4] != nil)	port = (int)_zen2han(REQ["ARGS"][4]) ;
@@ -713,19 +713,19 @@ int mailget()
 	return 1 ;
 }
 int mailids()
-{// ¦–ß‚è’nŒ`®’ˆÓ¦
- // Argument0: ƒzƒXƒg–¼
- // Argument1: ƒ†[ƒU–¼
- // Argument2: ƒpƒXƒ[ƒh
- // Result   : ‹ó•¶š—ñ
- // Value*   : ƒT[ƒo[ã‚Åƒ[ƒ‹‚É•t‚¯‚ç‚ê‚Ä‚¢‚éIDˆê‚Â‚¸‚Â
+{// â€»æˆ»ã‚Šåœ°å½¢å¼æ³¨æ„â€»
+ // Argument0: ãƒ›ã‚¹ãƒˆå
+ // Argument1: ãƒ¦ãƒ¼ã‚¶å
+ // Argument2: ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : ã‚µãƒ¼ãƒãƒ¼ä¸Šã§ãƒ¡ãƒ¼ãƒ«ã«ä»˜ã‘ã‚‰ã‚Œã¦ã„ã‚‹IDä¸€ã¤ãšã¤
 	RES["VALUE"] = _mailids(REQ["ARGS"][0] , REQ["ARGS"][1] , REQ["ARGS"][2]) ;
 	RES["RESULT"] = "" ;
 
 	return 1 ;
 }
 int md5()
-{// Argument0: •¶š—ñ
+{// Argument0: æ–‡å­—åˆ—
  // Result   : MD5
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _md5(REQ["ARGS"][0]) ;
@@ -745,17 +745,17 @@ int mouseleftclick()
 	return 1 ;
 }
 int mousemove()
-{// Argument0: ƒXƒNƒŠ[ƒ“xÀ•W
- // Argument1: ƒXƒNƒŠ[ƒ“yÀ•W
+{// Argument0: ã‚¹ã‚¯ãƒªãƒ¼ãƒ³xåº§æ¨™
+ // Argument1: ã‚¹ã‚¯ãƒªãƒ¼ãƒ³yåº§æ¨™
 	_mousemove(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int mousepos()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Result   : ‹ó•¶š—ñ
- // Value0   : xÀ•W
- // Value1   : yÀ•W
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value0   : xåº§æ¨™
+ // Value1   : yåº§æ¨™
 
 	dict pos = _mousepos() ;
 	RES["VALUE"] = {pos["x"] , pos["y"]} ;
@@ -769,47 +769,47 @@ int mouserightclick()
 	return 1 ;
 }
 int openfileselect()
-{// Argument0: ƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚Ìƒ^ƒCƒgƒ‹
- // Result   : â‘ÎƒpƒX
+{// Argument0: ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã®ã‚¿ã‚¤ãƒˆãƒ«
+ // Result   : çµ¶å¯¾ãƒ‘ã‚¹
 	RES["RESULT"] = _openfileselect(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
  
 	return 1 ;
 }
 int popmes()
-{// Argument0: ƒ|ƒbƒvƒAƒbƒv•\¦‚·‚éƒƒbƒZ[ƒW
+{// Argument0: ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	_create_thread("_popmes" , REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int pow()
-{// Argument0: À”i’êj
- // Argument1: À”iw”j
- // Result   : [ˆø”0]‚Ì[ˆø”1]æ
+{// Argument0: å®Ÿæ•°ï¼ˆåº•ï¼‰
+ // Argument1: å®Ÿæ•°ï¼ˆæŒ‡æ•°ï¼‰
+ // Result   : [å¼•æ•°0]ã®[å¼•æ•°1]ä¹—
 	if(REQ["ARGS"][0] == nil || REQ["ARGS"][1] == nil)	return -1 ;
 	RES["RESULT"] = _pow((double)_zen2han(REQ["ARGS"][0]) , (double)_zen2han(REQ["ARGS"][1])) ;
 
 	return 1 ;
 }
 int rand()
-{// Result: 0`9999‚Ü‚Å‚Ì®”‚ªˆê—lŠm—§‚Åˆê‚Â
+{// Result: 0ï½9999ã¾ã§ã®æ•´æ•°ãŒä¸€æ§˜ç¢ºç«‹ã§ä¸€ã¤
 	RES["RESULT"] = _rand() ;
 
 	return 1 ;
 }
 int randselect()
-{// Argument*: •¶š—ñ
- // Result   : ˆø”‚Ì’†‚©‚ç‘ğˆê‚³‚ê‚½•¶š—ñ
+{// Argument*: æ–‡å­—åˆ—
+ // Result   : å¼•æ•°ã®ä¸­ã‹ã‚‰æŠä¸€ã•ã‚ŒãŸæ–‡å­—åˆ—
 	if(_aryvn(REQ["ARGS"]) == 0)	return -1 ;
 	RES["RESULT"] = _randselect(REQ["ARGS"]) ;
 
 	return 1 ;
 }
 int readcsv()
-{// ¦Œ»óreadtext‚Æ‚Ù‚Ú“¯‚¶
- // Argument0: ƒtƒ@ƒCƒ‹ƒpƒXiâ‘ÎƒpƒX/‘Š‘ÎƒpƒXiakari.dlljj
- // Argument1: •¶šƒR[ƒhieucjp|utf8|sjis|jisjiÈ—ª‚Ísjisj
- // Result   : ‹ó•¶š—ñ
- // Value*   : “Ç‚İ‚Ü‚ê‚½csv‚ª1s‚²‚Æ‚P‚Â‚É
+{// â€»ç¾çŠ¶readtextã¨ã»ã¼åŒã˜
+ // Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾ãƒ‘ã‚¹/ç›¸å¯¾ãƒ‘ã‚¹ï¼ˆakari.dllï¼‰ï¼‰
+ // Argument1: æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆeucjp|utf8|sjis|jisï¼‰ï¼ˆçœç•¥æ™‚ã¯sjisï¼‰
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : èª­ã¿è¾¼ã¾ã‚ŒãŸcsvãŒ1è¡Œã”ã¨ï¼‘ã¤ã«
 	if(REQ["ARGS"][0] != nil)	return -1 ;
 	RES["RESULT"] = "" ;
 	RES["VALUE"]  = _readcsv(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
@@ -817,11 +817,11 @@ int readcsv()
 	return 1 ;
 }
 int readtext()
-{// Argument0: ƒtƒ@ƒCƒ‹ƒpƒXiâ‘ÎƒpƒX/‘Š‘ÎƒpƒXiakari.dlljj
- // Argument1: •¶šƒR[ƒhieucjp|utf8|sjis|jisjiÈ—ª‚Ísjisj
- // Argument2: ‰üsƒR[ƒhicrlf|lf|nonejiÈ—ªcrlfj
- // Result   : ‹ó•¶š—ñ
- // Value*   : “Ç‚İ‚Ü‚ê‚½ƒeƒLƒXƒg‚ª1s‚P‚Â‚É
+{// Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾ãƒ‘ã‚¹/ç›¸å¯¾ãƒ‘ã‚¹ï¼ˆakari.dllï¼‰ï¼‰
+ // Argument1: æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆeucjp|utf8|sjis|jisï¼‰ï¼ˆçœç•¥æ™‚ã¯sjisï¼‰
+ // Argument2: æ”¹è¡Œã‚³ãƒ¼ãƒ‰ï¼ˆcrlf|lf|noneï¼‰ï¼ˆçœç•¥æ™‚crlfï¼‰
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : èª­ã¿è¾¼ã¾ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆãŒ1è¡Œï¼‘ã¤ã«
 	if(REQ["ARGS"][0] != nil)	return -1 ;
 	RES["RESULT"] = "" ;
 	RES["VALUE"]  = _readtext(REQ["ARGS"][0] , REQ["ARGS"][1] , REQ["ARGS"][2]) ;
@@ -829,28 +829,28 @@ int readtext()
 	return 1 ;
 }
 int regexmatch()
-{// Argument0: •¶š—ñ
- // Argument1: ³‹K•\Œ»
- // Result   : •¶š—ñ‚ª³‹K•\Œ»‚ÆŠ®‘S‚Éˆê’v‚·‚ê‚Î1,‚³‚à‚È‚­‚Î0
+{// Argument0: æ–‡å­—åˆ—
+ // Argument1: æ­£è¦è¡¨ç¾
+ // Result   : æ–‡å­—åˆ—ãŒæ­£è¦è¡¨ç¾ã¨å®Œå…¨ã«ä¸€è‡´ã™ã‚Œã°1,ã•ã‚‚ãªãã°0
 	RES["RESULT"] = _regex_match(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int regexreplace()
-{// Argument0: •¶š—ñ
- // Argument1: ³‹K•\Œ»
- // Argument2: ’uŠ·•¶š—ñ
- // Result   : •¶š—ñ’†‚Ì³‹K•\Œ»‚Æˆê’v‚·‚é•”•ª‚ğ’uŠ·•¶š—ñ‚É’u‚«Š·‚¦‚½•¶š—ñ
+{// Argument0: æ–‡å­—åˆ—
+ // Argument1: æ­£è¦è¡¨ç¾
+ // Argument2: ç½®æ›æ–‡å­—åˆ—
+ // Result   : æ–‡å­—åˆ—ä¸­ã®æ­£è¦è¡¨ç¾ã¨ä¸€è‡´ã™ã‚‹éƒ¨åˆ†ã‚’ç½®æ›æ–‡å­—åˆ—ã«ç½®ãæ›ãˆãŸæ–‡å­—åˆ—
 	RES["RESULT"] = _regex_replace(REQ["ARGS"][0] , REQ["ARGS"][1] , REQ["ARGS"][2]) ;
 
 	return 1 ;
 }
 int regexsearch()
-{// Argument0: •¶š—ñ
- // Argument1: ³‹K•\Œ»
- // Argument2: –ß‚è’lˆÊ’ui1`j
- // Result   : •¶š—ñ’†‚Ì³‹K•\Œ»‚ÆA[ˆø”2]”Ô–Ú‚Éˆê’v‚µ‚½•”•ª•¶š—ñ
- // Value*   : Result’†‚Ì³‹K•\Œ»ƒOƒ‹[ƒv()‚Éˆê’v‚µ‚½•”•ª•¶š—ñ
+{// Argument0: æ–‡å­—åˆ—
+ // Argument1: æ­£è¦è¡¨ç¾
+ // Argument2: æˆ»ã‚Šå€¤ä½ç½®ï¼ˆ1ï½ï¼‰
+ // Result   : æ–‡å­—åˆ—ä¸­ã®æ­£è¦è¡¨ç¾ã¨ã€[å¼•æ•°2]ç•ªç›®ã«ä¸€è‡´ã—ãŸéƒ¨åˆ†æ–‡å­—åˆ—
+ // Value*   : Resultä¸­ã®æ­£è¦è¡¨ç¾ã‚°ãƒ«ãƒ¼ãƒ—()ã«ä¸€è‡´ã—ãŸéƒ¨åˆ†æ–‡å­—åˆ—
 	array ary = _regex_search(REQ["ARGS"][0] , REQ["ARGS"][1] , REQ["ARGS"][2]) ;
 	RES["RESULT"] = ary[0] ;
 	ary[0] = nil ;
@@ -859,26 +859,26 @@ int regexsearch()
 
 	return 1 ;
 }
-/* SAORIÀsŒnŠÖ” */
+/* SAORIå®Ÿè¡Œç³»é–¢æ•° */
 
 int saoriload()
-{// ¦universal SAORI‚Í”ñ„§¦
- // Argument0: ƒtƒ@ƒCƒ‹ƒpƒXi‘Š‘ÎƒpƒX/â‘ÎƒpƒXiakari.dll‚©‚ç‚Ìjj
- // Argument1: IDiSAORI universalidll‚ÌSAORIj‚Ì‚İj
- // Result   : ¬Œ÷1,¸”s0
+{// â€»universal SAORIã¯éæ¨å¥¨â€»
+ // Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆç›¸å¯¾ãƒ‘ã‚¹/çµ¶å¯¾ãƒ‘ã‚¹ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Argument1: IDï¼ˆSAORI universalï¼ˆdllã®SAORIï¼‰ã®ã¿ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _saoriload(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int saorirequest()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // ¦akari.dll‚ğSAORI basic‚Ìproxy‘ã‚í‚è‚É‚·‚ég“r‘z’èi—¢X‚¾‚ÆŠÖŒW‚È‚¢‚Å‚·‚ªj
- // ¦universal SAORI‚Íƒƒ‚ƒŠƒAƒNƒZƒX‚ª‚Ç‚¤‚Ì‚Æ‚¢‚¤ƒGƒ‰[‚É‚È‚é‚æ‚¤‚È‹C‚ª‚·‚é‚Ì‚Å”ñ„§
- // Argument0   : ƒtƒ@ƒCƒ‹ƒpƒXi‘Š‘ÎƒpƒX/â‘ÎƒpƒXiakari.dll‚©‚ç‚Ìjj
- //               ‚Ü‚½‚ÍIDisaoriload‚Åw’è‚µ‚½•¶š—ñj
- // Argument1~30: SAORI‚É“n‚·ˆø”@¦‰Â•Ï’·ˆø”“n‚¹‚È‚¢‚Ì‚Åd—lã30ŒÂ‚Ü‚Å‚ÉŒÀ’è
- // Result      : SAORI‚©‚ç‚Ì’P”–ß‚è’l
- // Value*      : SAORI‚©‚ç‚Ì•¡”–ß‚è’l
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // â€»akari.dllã‚’SAORI basicã®proxyä»£ã‚ã‚Šã«ã™ã‚‹ä½¿é€”æƒ³å®šï¼ˆé‡Œã€…ã ã¨é–¢ä¿‚ãªã„ã§ã™ãŒï¼‰
+ // â€»universal SAORIã¯ãƒ¡ãƒ¢ãƒªã‚¢ã‚¯ã‚»ã‚¹ãŒã©ã†ã®ã¨ã„ã†ã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã‚ˆã†ãªæ°—ãŒã™ã‚‹ã®ã§éæ¨å¥¨
+ // Argument0   : ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆç›¸å¯¾ãƒ‘ã‚¹/çµ¶å¯¾ãƒ‘ã‚¹ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ //               ã¾ãŸã¯IDï¼ˆsaoriloadã§æŒ‡å®šã—ãŸæ–‡å­—åˆ—ï¼‰
+ // Argument1~30: SAORIã«æ¸¡ã™å¼•æ•°ã€€â€»å¯å¤‰é•·å¼•æ•°æ¸¡ã›ãªã„ã®ã§ä»•æ§˜ä¸Š30å€‹ã¾ã§ã«é™å®š
+ // Result      : SAORIã‹ã‚‰ã®å˜æ•°æˆ»ã‚Šå€¤
+ // Value*      : SAORIã‹ã‚‰ã®è¤‡æ•°æˆ»ã‚Šå€¤
 	dict result ;
 	result = _saorirequest(
 		  REQ["ARGS"][1]  , REQ["ARGS"][2]  , REQ["ARGS"][3]  , REQ["ARGS"][4]  , REQ["ARGS"][5]  , REQ["ARGS"][6]  , REQ["ARGS"][7]  , REQ["ARGS"][8]  , REQ["ARGS"][9]  , REQ["ARGS"][10]
@@ -894,19 +894,19 @@ int saorirequest()
 	return 1 ;
 }
 int saoriunload()
-{// Argument0: IDisaoriload‚Åw’è‚µ‚½•¶š—ñj
- // Result   : ¬Œ÷1,¸”s0
+{// Argument0: IDï¼ˆsaoriloadã§æŒ‡å®šã—ãŸæ–‡å­—åˆ—ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _saoriunload(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int savecsv()
-{// ¦ˆø”‡˜’ˆÓ¦
- // Argument0: ƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- //            ã‘‚«/‘¶İ‚µ‚È‚¢ê‡ƒtƒ@ƒCƒ‹ì¬
- // Argument1: •¶šƒR[ƒhisjis|utf8|eucjp|jis|autojiÈ—ªautoj
- // Argument*: ƒJƒ“ƒ}‹æØ‚è‚Ì’l
- // Result   : ¬Œ÷1,¸”s0
+{// â€»å¼•æ•°é †åºæ³¨æ„â€»
+ // Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ //            ä¸Šæ›¸ã/å­˜åœ¨ã—ãªã„å ´åˆãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆ
+ // Argument1: æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆsjis|utf8|eucjp|jis|autoï¼‰ï¼ˆçœç•¥æ™‚autoï¼‰
+ // Argument*: ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã®å€¤
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 
 	string path = REQ["ARGS"][0] ;
 	string code = REQ["ARGS"][1] ;
@@ -917,50 +917,50 @@ int savecsv()
 	return 1 ;
 }
 int savefileselect()
-{// Argument0: ƒ_ƒCƒAƒƒOƒ{ƒbƒNƒX‚Ìƒ^ƒCƒgƒ‹
- // Result   : â‘ÎƒpƒX
+{// Argument0: ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãƒœãƒƒã‚¯ã‚¹ã®ã‚¿ã‚¤ãƒˆãƒ«
+ // Result   : çµ¶å¯¾ãƒ‘ã‚¹
 	RES["RESULT"] = _savefileselect(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int scriptload()
-{// ¦”ñ„§¦
- // Argument0: Šg’£q‚ğœ‚¢‚½ƒpƒXiâ‘ÎƒpƒX/‘Š‘ÎƒpƒXiakari.dll‚Ìjj
- // Result   : ¬Œ÷1,¸”s0
+{// â€»éæ¨å¥¨â€»
+ // Argument0: æ‹¡å¼µå­ã‚’é™¤ã„ãŸãƒ‘ã‚¹ï¼ˆçµ¶å¯¾ãƒ‘ã‚¹/ç›¸å¯¾ãƒ‘ã‚¹ï¼ˆakari.dllã®ï¼‰ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _script_load(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int serialclose()
-{// Result   : ¬Œ÷1,¸”s0
+{// Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _serial_close() ;
 
 	return 1 ;
 }
 int serialopen()
-{// Argument0: ƒ|[ƒgƒiƒ“ƒo[iCOM1‚È‚ç1j
- // Result   : ¬Œ÷1,¸”s0
+{// Argument0: ãƒãƒ¼ãƒˆãƒŠãƒ³ãƒãƒ¼ï¼ˆCOM1ãªã‚‰1ï¼‰
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _serial_open((int)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int serialread()
-{// Result   : ƒVƒŠƒAƒ‹ƒ|[ƒg‚Ìƒoƒbƒtƒ@“à‚É‚ ‚é•¶š—ñ
+{// Result   : ã‚·ãƒªã‚¢ãƒ«ãƒãƒ¼ãƒˆã®ãƒãƒƒãƒ•ã‚¡å†…ã«ã‚ã‚‹æ–‡å­—åˆ—
 	RES["RESULT"] = _serial_read() ;
 
 	return 1 ;
 }
 int serialsend()
-{// Argument0: ‘—M•¶š—ñ
- // Argument1: ¬Œ÷1,¸”s0
+{// Argument0: é€ä¿¡æ–‡å­—åˆ—
+ // Argument1: æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	RES["RESULT"] = _serial_send(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int serialsetstate()
-{// ¦ˆø”Œ`®’ˆÓ¦
- // Argument*: ƒL[:’l@‚ÌŒ`‚Åˆê‚Â‚¸‚Â
- // Result   : ¬Œ÷1,¸”s0
+{// â€»å¼•æ•°å½¢å¼æ³¨æ„â€»
+ // Argument*: ã‚­ãƒ¼:å€¤ã€€ã®å½¢ã§ä¸€ã¤ãšã¤
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 	dict   member ;
 	string key    ;
 	string value  ;
@@ -977,134 +977,134 @@ int serialsetstate()
 	return 1 ;
 }
 int setfocus()
-{// Argument0: Window Handle’l
+{// Argument0: Window Handleå€¤
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	_setfocus(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int sin()
-{// Argument0: Šp“x(rad)¦
- // Result   : ³Œ·
+{// Argument0: è§’åº¦(rad)â€»
+ // Result   : æ­£å¼¦
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _sin((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int sinh()
-{// Argument0: Šp“x(rad)
- // Result   : ‘o‹Èü³Œ·
+{// Argument0: è§’åº¦(rad)
+ // Result   : åŒæ›²ç·šæ­£å¼¦
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _sinh((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int sleep()
-{// Argument0: ˆ—‚ğ‹x~‚·‚éŠÔi•bj
+{// Argument0: å‡¦ç†ã‚’ä¼‘æ­¢ã™ã‚‹æ™‚é–“ï¼ˆç§’ï¼‰
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	_sleep((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int speak()
-{// ¦Œ»ó–³ˆÓ–¡¦
- // Argument0: •¶š—ñ
+{// â€»ç¾çŠ¶ç„¡æ„å‘³â€»
+ // Argument0: æ–‡å­—åˆ—
 	_speak(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int sqrt()
-{// Argument0: À”
- // Result   : •½•ûª
+{// Argument0: å®Ÿæ•°
+ // Result   : å¹³æ–¹æ ¹
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _sqrt((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int strary()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: •¶š—ñ
- // Result   : ‹ó•¶š—ñ
- // Value*   : ˆê‚Â‚É‚P•¶š‚¸‚Â
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: æ–‡å­—åˆ—
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : ä¸€ã¤ã«ï¼‘æ–‡å­—ãšã¤
 	RES["RESULT"] = "" ;
 	RES["VALUE"]  = _strary(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int strlen()
-{// Argument0: •¶š—ñ
- // Result   : •¶š—ñ‚Ì’·‚³
+{// Argument0: æ–‡å­—åˆ—
+ // Result   : æ–‡å­—åˆ—ã®é•·ã•
 	RES["RESULT"] = _strlen(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int strreplace()
-{// Argument0: ‘ÎÛ•¶š—ñ
- // Argument1: ŒŸõ•¶š—ñ
- // Argument2: ’uŠ·•¶š—ñ
- // Result   : ’uŠ·Œã•¶š—ñ
+{// Argument0: å¯¾è±¡æ–‡å­—åˆ—
+ // Argument1: æ¤œç´¢æ–‡å­—åˆ—
+ // Argument2: ç½®æ›æ–‡å­—åˆ—
+ // Result   : ç½®æ›å¾Œæ–‡å­—åˆ—
 	RES["RESULT"] = _strreplace(REQ["ARGS"][0] , REQ["ARGS"][1] , REQ["ARGS"][2]) ;
 
 	return 1 ;
 }
 int strsplit()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: •¶š—ñ
- // Argument1: ‹æØ‚èš
- // Result   : ‹ó•¶š—ñ
- // Value*   : •ªŠ„‚³‚ê‚½Še‹æŠÔ‚ª‚P‚Â‚¸‚Â
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: æ–‡å­—åˆ—
+ // Argument1: åŒºåˆ‡ã‚Šå­—
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : åˆ†å‰²ã•ã‚ŒãŸå„åŒºé–“ãŒï¼‘ã¤ãšã¤
 	RES["VALUE"] = _strsplit(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 	return 1 ;
 }
 int strstr()
-{// Argument0: ‘ÎÛ•¶š—ñ
- // Argument1: ŒŸõ•¶š—ñ
- // Argument2: ŒŸõŠJnˆÊ’ui0`jiÈ—ª0j
- // Result   : ‘ÎÛ•¶š—ñ’†‚ÌŒŸõ•¶š—ñ‚ÌŠJnˆÊ’ui0`jB”­Œ©‚Å‚«‚È‚¯‚ê‚Î-1
+{// Argument0: å¯¾è±¡æ–‡å­—åˆ—
+ // Argument1: æ¤œç´¢æ–‡å­—åˆ—
+ // Argument2: æ¤œç´¢é–‹å§‹ä½ç½®ï¼ˆ0ï½ï¼‰ï¼ˆçœç•¥æ™‚0ï¼‰
+ // Result   : å¯¾è±¡æ–‡å­—åˆ—ä¸­ã®æ¤œç´¢æ–‡å­—åˆ—ã®é–‹å§‹ä½ç½®ï¼ˆ0ï½ï¼‰ã€‚ç™ºè¦‹ã§ããªã‘ã‚Œã°-1
 	RES["RESULT"] = _strstr(REQ["ARGS"][0] , REQ["ARGS"][1] , (int)_zen2han(REQ["ARGS"][2])) ;
 
 	return 1 ;
 }
 int strtokenize()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: •¶š—ñ
- // Result   : ‹ó•¶š—ñ
- // Value*   : ƒg[ƒNƒ“ˆê‚Â‚¸‚Â
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: æ–‡å­—åˆ—
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : ãƒˆãƒ¼ã‚¯ãƒ³ä¸€ã¤ãšã¤
 	RES["RESULT"] = "" ;
 	RES["VALUE"]  = _strtokenize(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int substr()
-{// Argument0: ‘ÎÛ•¶š—ñ
- // Argument1: •”•ª•¶š—ñŠJnˆÊ’ui•‰”‚Å•¶š—ñ––”ö‚©‚ç‹t‡‚É”‚¦‚éj
- // Argument2: •”•ª•¶š—ñ•¶š”
- // Result   : •”•ª•¶š—ñ
+{// Argument0: å¯¾è±¡æ–‡å­—åˆ—
+ // Argument1: éƒ¨åˆ†æ–‡å­—åˆ—é–‹å§‹ä½ç½®ï¼ˆè² æ•°ã§æ–‡å­—åˆ—æœ«å°¾ã‹ã‚‰é€†é †ã«æ•°ãˆã‚‹ï¼‰
+ // Argument2: éƒ¨åˆ†æ–‡å­—åˆ—æ–‡å­—æ•°
+ // Result   : éƒ¨åˆ†æ–‡å­—åˆ—
 	RES["RESULT"] = _substr(REQ["ARGS"][0] , (int)_zen2han(REQ["ARGS"][1]) , (int)_zen2han(REQ["ARGS"][2])) ;
 
 	return 1 ;
 }
 int tan()
-{// Argument0: Šp“x(rad)
- // Result   : ³Ú
+{// Argument0: è§’åº¦(rad)
+ // Result   : æ­£æ¥
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _tan((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int tanh()
-{// Argument0: Šp“x(rad)
- // Result   : ‘o‹Èü³Ú
+{// Argument0: è§’åº¦(rad)
+ // Result   : åŒæ›²ç·šæ­£æ¥
 	if(REQ["ARGS"][0] == nil)	return -1 ;
 	RES["RESULT"] = _tanh((double)_zen2han(REQ["ARGS"][0])) ;
 
 	return 1 ;
 }
 int tokenize()
-{// ¦–ß‚è’lŒ`®’ˆÓ¦
- // Argument0: ƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- // Result   : ‹ó•¶š—ñ
- // Value*   : ƒg[ƒNƒ“ˆê‚Â‚¸‚Â
+{// â€»æˆ»ã‚Šå€¤å½¢å¼æ³¨æ„â€»
+ // Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ // Result   : ç©ºæ–‡å­—åˆ—
+ // Value*   : ãƒˆãƒ¼ã‚¯ãƒ³ä¸€ã¤ãšã¤
 	RES["RESULT"] = "" ;
 	RES["VALUE"]  = _tokenize(REQ["ARGS"][0]) ;
 
@@ -1117,57 +1117,57 @@ int updatewindowslist()
 	return 1 ;
 }
 int urldecode()
-{// Argument0: ƒfƒR[ƒhÏURL
- // Argument1: URL‚Ì•¶šƒR[ƒhisjis|eucjp|utf8|jis|auto¦j@¦©“®”»•Ê
- // Result   : ƒfƒR[ƒh‚³‚ê‚½URL
+{// Argument0: ãƒ‡ã‚³ãƒ¼ãƒ‰æ¸ˆURL
+ // Argument1: URLã®æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆsjis|eucjp|utf8|jis|autoâ€»ï¼‰ã€€â€»è‡ªå‹•åˆ¤åˆ¥
+ // Result   : ãƒ‡ã‚³ãƒ¼ãƒ‰ã•ã‚ŒãŸURL
 	RES["RESULT"] = _urldecode(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int urlencode()
 {// Argument0: URL
- // Argument1: ƒGƒ“ƒR[ƒh‘O‚É•ÏŠ·‚·‚é•¶šƒR[ƒhisjis|eucjp|utf8|jisj
- // Result   : ƒGƒ“ƒR[ƒh‚³‚ê‚½URL
+ // Argument1: ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰å‰ã«å¤‰æ›ã™ã‚‹æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆsjis|eucjp|utf8|jisï¼‰
+ // Result   : ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ã•ã‚ŒãŸURL
 	RES["RESULT"] = _urlencode(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int version()
-{// Result: “”‚Ìƒo[ƒWƒ‡ƒ“
+{// Result: ç¯ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 	RES["RESULT"] = _version() ;
 
 	return 1 ;
 }
 int vload()
-{// ¦Œ»ó–³ˆÓ–¡¦
+{// â€»ç¾çŠ¶ç„¡æ„å‘³â€»
 	_vload(REQ["ARGS"][0]) ;
 
 	return 1 ;
 }
 int vsave()
-{// ¦Œ»ó–³ˆÓ–¡¦
+{// â€»ç¾çŠ¶ç„¡æ„å‘³â€»
 	RES["RESULT"] = _vsave(REQ["ARGS"][0] , REQ["ARGS"][1]) ;
 
 	return 1 ;
 }
 int wrappedstr()
-{// Argument0: ‘ÎÛ•¶š—ñ
- // Argument1: ŠJnƒ^ƒO
- // Argument2: I—¹ƒ^ƒO
- // Argument3: ŠJnˆÊ’u
- // Result   : ‘ÎÛ•¶š—ñ‚Ì’†‚ÌŠJnƒ^ƒO‚ÆI—¹ƒ^ƒO‚ÅˆÍ‚Ü‚ê‚Ä‚¢‚é•¶š—ñ
+{// Argument0: å¯¾è±¡æ–‡å­—åˆ—
+ // Argument1: é–‹å§‹ã‚¿ã‚°
+ // Argument2: çµ‚äº†ã‚¿ã‚°
+ // Argument3: é–‹å§‹ä½ç½®
+ // Result   : å¯¾è±¡æ–‡å­—åˆ—ã®ä¸­ã®é–‹å§‹ã‚¿ã‚°ã¨çµ‚äº†ã‚¿ã‚°ã§å›²ã¾ã‚Œã¦ã„ã‚‹æ–‡å­—åˆ—
 	RES["RESULT"] = _wrappedstr(REQ["ARGS"][0], REQ["ARGS"][1], REQ["ARGS"][2], (int)_zen2han(REQ["ARGS"][3])) ;
 
 	return 1 ;
 }
 int writetext()
-{// ¦ˆø”‡˜’ˆÓ¦
- // Argument0: ƒtƒ@ƒCƒ‹ƒpƒXiâ‘Î/‘Š‘Îiakari.dll‚©‚ç‚Ìjj
- //            ã‘‚«/‘¶İ‚µ‚È‚¢ê‡ƒtƒ@ƒCƒ‹ì¬
- // Argument1: •¶šƒR[ƒhisjis|utf8|eucjp|jis|autojiÈ—ªautoj
- // Argument2: ‰üsƒR[ƒhilf|crlfjiÈ—ªcrlfj
- // Argument*: ‘‚«‚Ş“à—e1s‚¸‚Â
- // Result   : ¬Œ÷1,¸”s0
+{// â€»å¼•æ•°é †åºæ³¨æ„â€»
+ // Argument0: ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ï¼ˆçµ¶å¯¾/ç›¸å¯¾ï¼ˆakari.dllã‹ã‚‰ã®ï¼‰ï¼‰
+ //            ä¸Šæ›¸ã/å­˜åœ¨ã—ãªã„å ´åˆãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆ
+ // Argument1: æ–‡å­—ã‚³ãƒ¼ãƒ‰ï¼ˆsjis|utf8|eucjp|jis|autoï¼‰ï¼ˆçœç•¥æ™‚autoï¼‰
+ // Argument2: æ”¹è¡Œã‚³ãƒ¼ãƒ‰ï¼ˆlf|crlfï¼‰ï¼ˆçœç•¥æ™‚crlfï¼‰
+ // Argument*: æ›¸ãè¾¼ã‚€å†…å®¹1è¡Œãšã¤
+ // Result   : æˆåŠŸæ™‚1,å¤±æ•—æ™‚0
 
 	string path = REQ["ARGS"][0] ;
 	string code = REQ["ARGS"][1] ;
@@ -1180,8 +1180,8 @@ int writetext()
 	return 1 ;
 }
 int zen2han()
-{// Argument0: •¶š—ñ
- // Result   : ƒAƒ‹ƒtƒ@ƒxƒbƒgE‹L†‚È‚Ç‚ğ”¼Šp‰»‚µ‚½•¶š—ñ
+{// Argument0: æ–‡å­—åˆ—
+ // Result   : ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆãƒ»è¨˜å·ãªã©ã‚’åŠè§’åŒ–ã—ãŸæ–‡å­—åˆ—
 	RES["RESULT"] = _zen2han(REQ["ARGS"][0]) ;
 
 	return 1 ;

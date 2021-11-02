@@ -1,137 +1,137 @@
 AKARI as SAORI
 
-�������傭���������J���Ă����� as SAORI��
-���ɏ���Ȃ���Internet Archive���T���x�[�W����
-�����e�i���X�E�Ĕz�z���Ă���܂��B
+もっしょくし氏が公開していた灯 as SAORIを
+誠に勝手ながらInternet Archiveよりサルベージして
+メンテナンス・再配布しております。
 
-�Ĕz�z�ҁFDon
-�@�T�C�g�Fhttp://nikolat.herokuapp.com/
+再配布者：Don
+　サイト：http://nikolat.herokuapp.com/
 
-Don���������ύX�����̃��C�Z���X�̓p�u���b�N�h���C���Ƃ��܂��B
+Donが加えた変更部分のライセンスはパブリックドメインとします。
 
-�ȉ��A�I���W�i����readme�ł��B(���[���A�h���X�̂ݏ������Ă���܂�)
-
-
-�� as SAORI�@2016.05.24
-
-��=�ӔC�ҏ��===================================================================
-�@���@�O�F�������傭��
-�@�T�C�g�Fhttp://gallnuts.webcrow.jp/
-�@���[���F
-
-�y���肢�z
-�@��builtin.azr�ɂ���
-�@�@json�n�Esprintf�̂悢������M�������͋����Ă��������B
-�@�@����ȊO�ɂ�saori�Ƃ��Ă͂���܂�Ӗ��̂Ȃ��e��֐��̂悢�����A�C�f�B�A���������B
-�@�@����ƈȉ��̊֐��͎����łقƂ�ǎ����ĂȂ��̂ŁA����񍐂��҂����Ă܂��B
-�@�Email�n�֐�
-�@�Edb�n�֐�
-�@�Eftp�n�֐�
-
-��=�T�v=========================================================================
-�@un�������SHIORI�ł���u���v���A
-�@SAORI�Ƃ��ė��p����̂ɕ֗��Ȃ悤�ɏ����������̂ł�
-
-�@���̓��j�[�N�ȋ@�\�𑽐������Ă��܂�
-�@�P�ɂ���炪SAORI�Ƃ��Ďg���邾���ł��ʔ������ł���A
-�@�܂����ŏ������X�N���v�g��e�ՂɃ��W���[���Ƃ��đg�ݍ��߂�y�䂪�����
-�@�����Ɩʔ��������ł��邾�낤�Ɠ���ŁA����Ȃ������Ă݂܂���
-
-�@��V���΁i�u���v�J�����j
-�@http://le.silk.to/
-
-�@�F�X��YAYA as SAORI���Q�l�Ɂi���ۃp�N���j���Ă��܂�
-�@�g��������Ӑ}�I�ɋ߂Â��Ă��镔��������܂�
-�@[YAYA as SAORI�@�ˁ@http://navy.nm.land.to/post/]
-
-��=���̃Z�b�g�Ɋ܂܂��t�@�C��=================================================
-�Eakari.dll	���{�́i�� as SAORI���Ή����Ă���o�[�W�����̂��́j
-�Emain.azr	�� as SAORI�@�V�X�e������
-�Ebuiltin.azr	���r���g�C���֐��]�p���W���[��
-�Eakasaori.csv	���W���[�������ݒ�pCSV�t�@�C��
-�Ereadme.txt	���݂��ǂ݂̐�������
-
-�@��akari.dll�ȊO�̓������Ȃǂ̃e�L�X�g�G�f�B�^�ŊJ���܂�
-
-��=�g�����̊�{=================================================================
-1,akari.dll���A�S�[�X�g��SHIORI�ɉ������K�؂ȕ��@��SAORI�Ƃ��Ďg����悤�ɂ���
-�@���Q�l�F���X�̏ꍇ
-�@�@http://soliton.sub.jp/satori/index.php?%B3%B0%C9%F4%B4%D8%BF%F4%2FSAORI#e97e5d17
-2,akari.dll�Ɠ����f�B���N�g���ɁA
-�@�umain.azr�v�uakasaori.csv�v�ubuiltin.azr���v��ݒu����
-�@�����r���g�C���֐���SAORI�@�\�Ƃ��Ďg��Ȃ��ꍇ�͕s�v
-3,�S�[�X�g��SHIORI�ɉ������K�؂ȕ��@�ŋ@�\���Ăяo���Ďg��
-�@�Ăяo���̍ۂ�
-�@�EArgument0�Ɂu�Ăяo���֐��̖��O�v
-�@�EArgument1�ȍ~�Ɂu���̊֐��ɓn�������v
-�@���w�肷��
-�@���Q�l�F���X�Łiakari�j��akari.dll���ĂԂ悤�ɐݒ肵�Ă���ꍇ
-�@�iakari,hoge,����1,����2�j
-�@�iakari,ftp_login,ftp.huga.com,user,secret,21�j
-�@�Ƃ����悤�ȋ�ɂȂ�܂�
-
-��=builtin.azr�ɂ���==========================================================
-�@���̃r���g�C���֐���SAORI�@�\�Ƃ��ė��p���邽�߂̃��W���[���ł�
-�@���r���g�C���֐����̐擪�̃A���_�[�o�[�𔲂������̂����ꂼ��Ή�����SAORI�@�\�ł�
-�@�֐��̈ꗗ����т��̋@�\�ɂ��ẮA���L�����}�j���A�������ǂ݂�������
-�@http://le.silk.to/akari.php
+以下、オリジナルのreadmeです。(メールアドレスのみ消去しております)
 
 
-��������
-�ESSP�ȊO�œ�����m�F���Ă��܂���
-�ESAORI�Ƃ��Ă̈�����߂�l�͑S�ĒP�ɕ�����Ƃ��Ĉ����܂�
-�@�{�������^��z��^�̒l�������֐��ɂ��ẮA
-�@���W���[�����ŕϊ����s���Ă��܂��̂ŁA���ӂ��Ă�������
-�ESAORI�@�\�Ƃ��Ă͖��Ӗ��ȕ��E�p�r�����Ɍ�������̂��܂݂܂�
-�E�_�C�A���O�{�b�N�X��|�b�v�A�b�v���j���[��W�J����֐��ł́A
-�@SAORI���œ��͑҂��̏�ԂɂȂ邽�߁ASSP��info���x���̃G���[���������܂�
-�@�e���ɂ��Đ������Ă��܂��񂪁ASAORI���Ăяo���C�x���g�̐����ɂ���Ă�
-�@�v��ʉe��������\��������܂�
-�Ebuiltin.azr���e�֐��̃R�����g�ɂ��A�Q�l�ɂł����񂪂���ꍇ������܂�
+灯 as SAORI　2016.05.24
 
-��=�����SAORI�@�\==============================================================
-�@�ȉ��̊֐���SAORI�@�\�Ƃ��ė\�ߗp�ӂ���Ă��܂�
-�EAKASAORI.SYSFUNC.LOADEDCSV
-�@�ݒ�t�@�C����include��Ƃ��Ďw�肳��Ă���A
-�@load���ɓǂݍ��܂ꂽCSV�t�@�C�������A�J���}��؂�ŕԋp����܂�
-�EAKASAORI.SYSFUNC.NFCSV
-�@�ݒ�t�@�C����include��Ƃ��Ďw�肳��Ă��邪
-�@�����ł��Ȃ�����CSV�t�@�C�������A�J���}��؂�ŕԋp����܂�
-�@�S�ēǂݍ��܂�Ă���΋󂪕Ԃ�܂�
-�EAKASAORI.SYSFUNC.LOADEDMOD
-�@�ݒ�t�@�C����module�Ƃ��Ďw�肳��Ă���A
-�@load���ɓǂݍ��܂ꂽ�������t�@�C�����A�J���}��؂�ŕԋp����܂�
-�EAKASAORI.SYSFUNC.NFMOD
-�@�ݒ�t�@�C����module�Ƃ��Ďw�肳��Ă��邪
-�@�����ł��Ȃ������������t�@�C�����A�J���}��؂�ŕԋp����܂�
-�@�S�ēǂݍ��܂�Ă���΋󂪕Ԃ�܂�
+●=責任者情報===================================================================
+　名　前：もっしょくし
+　サイト：http://gallnuts.webcrow.jp/
+　メール：
 
-��=�ǉ����W���[��===============================================================
-�@�������t�@�C�����A���W���[���Ƃ��Ēǉ��ł��܂�
-�@�ǉ��������������t�@�C���́Aakasaori.csv�ɒǋL����K�v������܂�
-�@�����͈ȉ��̒ʂ�ł�
+【お願い】
+　★builtin.azrについて
+　　json系・sprintfのよい実装を閃いた方は教えてください。
+　　それ以外にもsaoriとしてはあんまり意味のない各種関数のよい実装アイディアください。
+　　それと以下の関数は自分でほとんど試してないので、動作報告お待ちしてます。
+　・mail系関数
+　・db系関数
+　・ftp系関数
 
-module,[���W���[���t�@�C����]
+●=概要=========================================================================
+　un氏制作のSHIORIである「灯」を、
+　SAORIとして利用するのに便利なように準備したものです
 
-�@���g���q�͏����Ă��������i.azr�Œ�j
-�@����΃p�X�����akari.dll����̑��΃p�X���w��\�ł�
-�@�������R�[�h��Shift-JIS�̂ݗL���ł�
+　灯はユニークな機能を多数備えています
+　単にそれらがSAORIとして使えるだけでも面白そうであり、
+　また灯で書いたスクリプトを容易にモジュールとして組み込める土台があれば
+　もっと面白い事ができるだろうと踏んで、勝手ながら作ってみました
 
-�@�܂��A�ȉ��̂悤��akasaori.csv���瑼��csv���w�肵�āA
-�@����csv�ɂ���akasaori.csv�Ɠ��l�ɓǂݍ��ގ����\�ł�
+　夜天燈火（「灯」開発元）
+　http://le.silk.to/
 
-include,[csv�t�@�C����]
+　色々とYAYA as SAORIを参考に（≒丸パクリ）しています
+　使い勝手も意図的に近づけている部分があります
+　[YAYA as SAORI　⇒　http://navy.nm.land.to/post/]
 
-�@���g���q�͏����Ă��������i.csv�Œ�j
-�@����΃p�X�����akari.dll����̑��΃p�X���w��\�ł�
-�@���Ǎ���csv�ɂ����include�������Ă��\���܂���
-�@��include��̃��W���[�������̓ǂݍ��ݏ����́A
-�@�@�������ʒu�Ɋւ�炸���ݓǂݍ��ݒ���csv�t�@�C���ɂ�����̂̌�ɂȂ�܂�
-�@�������R�[�h��Shift-JIS�̂ݗL���ł�
-���}��
+●=このセットに含まれるファイル=================================================
+・akari.dll	灯本体（灯 as SAORIが対応しているバージョンのもの）
+・main.azr	灯 as SAORI　システム辞書
+・builtin.azr	灯ビルトイン関数転用モジュール
+・akasaori.csv	モジュール辞書設定用CSVファイル
+・readme.txt	現在お読みの説明書き
+
+　※akari.dll以外はメモ帳などのテキストエディタで開けます
+
+●=使い方の基本=================================================================
+1,akari.dllを、ゴーストのSHIORIに応じた適切な方法でSAORIとして使えるようにする
+　※参考：里々の場合
+　　http://soliton.sub.jp/satori/index.php?%B3%B0%C9%F4%B4%D8%BF%F4%2FSAORI#e97e5d17
+2,akari.dllと同じディレクトリに、
+　「main.azr」「akasaori.csv」「builtin.azr※」を設置する
+　※灯ビルトイン関数をSAORI機能として使わない場合は不要
+3,ゴーストのSHIORIに応じた適切な方法で機能を呼び出して使う
+　呼び出しの際は
+　・Argument0に「呼び出す関数の名前」
+　・Argument1以降に「その関数に渡す引数」
+　を指定する
+　※参考：里々で（akari）でakari.dllを呼ぶように設定してある場合
+　（akari,hoge,引数1,引数2）
+　（akari,ftp_login,ftp.huga.com,user,secret,21）
+　というような具合になります
+
+●=builtin.azrについて==========================================================
+　灯のビルトイン関数をSAORI機能として利用するためのモジュールです
+　灯ビルトイン関数名の先頭のアンダーバーを抜いたものがそれぞれ対応するSAORI機能です
+　関数の一覧およびその機能については、下記公式マニュアルもお読みください
+　http://le.silk.to/akari.php
+
+
+▼諸注意
+・SSP以外で動作を確認していません
+・SAORIとしての引数や戻り値は全て単に文字列として扱われます
+　本来辞書型や配列型の値を扱う関数については、
+　モジュール側で変換を行っていますので、注意してください
+・SAORI機能としては無意味な物・用途が非常に限られるものも含みます
+・ダイアログボックスやポップアップメニューを展開する関数では、
+　SAORI側で入力待ちの状態になるため、SSPのinfoレベルのエラーが発生します
+　影響について精査していませんが、SAORIを呼び出すイベントの性質によっては
+　思わぬ影響がある可能性があります
+・builtin.azr内各関数のコメントにも、参考にできる情報がある場合があります
+
+●=特殊なSAORI機能==============================================================
+　以下の関数がSAORI機能として予め用意されています
+・AKASAORI.SYSFUNC.LOADEDCSV
+　設定ファイルにinclude先として指定されており、
+　load時に読み込まれたCSVファイル名が、カンマ区切りで返却されます
+・AKASAORI.SYSFUNC.NFCSV
+　設定ファイルにinclude先として指定されているが
+　発見できなかったCSVファイル名が、カンマ区切りで返却されます
+　全て読み込まれていれば空が返ります
+・AKASAORI.SYSFUNC.LOADEDMOD
+　設定ファイルにmoduleとして指定されており、
+　load時に読み込まれた灯辞書ファイルが、カンマ区切りで返却されます
+・AKASAORI.SYSFUNC.NFMOD
+　設定ファイルにmoduleとして指定されているが
+　発見できなかった灯辞書ファイルが、カンマ区切りで返却されます
+　全て読み込まれていれば空が返ります
+
+●=追加モジュール===============================================================
+　灯辞書ファイルを、モジュールとして追加できます
+　追加したい灯辞書ファイルは、akasaori.csvに追記する必要があります
+　書式は以下の通りです
+
+module,[モジュールファイル名]
+
+　※拡張子は除いてください（.azr固定）
+　※絶対パスおよびakari.dllからの相対パスが指定可能です
+　※文字コードはShift-JISのみ有効です
+
+　また、以下のようにakasaori.csvから他のcsvを指定して、
+　そのcsvについてakasaori.csvと同様に読み込む事も可能です
+
+include,[csvファイル名]
+
+　※拡張子は除いてください（.csv固定）
+　※絶対パスおよびakari.dllからの相対パスが指定可能です
+　※読込先csvにさらにincludeを書いても構いません
+　※include先のモジュール辞書の読み込み順序は、
+　　書いた位置に関わらず現在読み込み中のcsvファイルにあるものの後になります
+　※文字コードはShift-JISのみ有効です
+▼凡例
 /********************************************************/
-// �^����ꂽSAORI����0�Ԃ��I�E���Ԃ����邾���̊֐�
-// �������󂾂ƃG���[��Ԃ�
+// 与えられたSAORI引数0番をオウム返しするだけの関数
+// 引数が空だとエラーを返す
 int ECHO()
 {
 	if(REQ["ARGS"][0] == nil) return -1 ;
@@ -140,91 +140,91 @@ int ECHO()
 	return 1 ;
 }
 /********************************************************/
-���֐��Ƃ��Ă̖߂�l
-�E�����ł����̂�SAORI�̎��s���ʂƂ��Ă̖߂�l�ł͂Ȃ��A
-�@�e���W���[���֐�����asSAORI�V�X�e�����ɑ΂���return����l�ɂ��Ăł�
-�E�Ăяo���ꂽ�֐�������ɏ������ꂽ�ꍇ�́A�u1�v��Ԃ��Ă�������
-�@"200 OK"�Ƃ����X�e�[�^�X�ƁA��q����SAORI�߂�l��SHIORI�ɕԋp���܂�
-�E�����u-1�v���Ԃ�ƁASAORI�͍���̗v�����s���Ȃ��̂ł������Ƃ���
-�@"404 Bad Request"�Ƃ����X�e�[�^�X��SHIORI�ɕԋp���܂�
-�@�֐��̎��s��K���Ȃ��������n���ꂽ�ꍇ���́A-1��Ԃ��Ă�������
-�E�����u0�v���Ԃ�ƁASAORI�͍���v�����ꂽ���e�ɂ��ĕԋp���ׂ����e�͂Ȃ��Ƃ���
-�@"204 No Content"�Ƃ����X�e�[�^�X��SHIORI�ɕԋp���܂�
-�E�߂�l�ɋA�����Ȃ��悤�ȏ����̓X�e�[�^�X�Ɋւ�炸���s�����ꍇ������܂�
-�@�Ⴆ�Ί֐����œ��r���g�C���֐�_mouserightclick()������Ɏ��s������
-�@�ŏI�I�ȃX�e�[�^�X�Ɋւ�炸���̏�Ń}�E�X�E�N���b�N�����s����܂�
-��SAORI����
-�E�Ăяo���ꂽ�֐��̈����́A�֐����ŕϐ��uREQ["ARGS"][N]�v�Ƃ��ė��p�ł��܂�
-�@N��0�ȏ�̐����ł�
-�E�t�Ɍ����ƁA�ʏ�̌`���ł͈������n����܂���̂Œ��ӂ��Ă�������
-�E�����͑S�ĕ�����^�œn����܂��̂ŁA�֐����ƂɓK�X�ϊ����Ă�������
-��SAORI�߂�l
-�ESAORI����̖߂�l�́A���W���[�����Ŏ����^�ϐ��uRES�v�̗v�f�Ƃ��Đݒ肵�܂�
-�@�߂�l�ɂ͒P���߂�l�iResult�j�ƕ����߂�l�iValueN�j�̓��ނ�����܂�
-�@���ꂼ��uRES["RESULT"]�v�uRES["VALUE"][N]�v�Ƃ��������^�ϐ��̗v�f���Ή����܂�
-�@�󋵂ɉ����Ďg�������Ă�������
-�E�����߂�lRES["VALUE"][N]�ւ̑���́A�P��
-�@RES["VALUE"][0] = �l0
-�@�ł͂ł��܂���B���Ԃ�
-�@RES["VALUE"] += �l0
-�@RES["VALUE"] += �l1
-�@:
-�@�Ƃ��邩�A
-�@RES["VALUE"] = {�l0,�l1,...}
-�@�Ƃ��܂��B
-�E���ꂼ��̖߂�l�͑S�ĕ�����^�ɕϊ������_�ɒ��ӂ��Ă�������
-�E�֐���0��-1��return����ƁA�����̖߂�l��SHIORI�ɕԋp����܂���
-�@���O�o�́u���֐��Ƃ��Ă̖߂�l�v�Q��
-�����W���[�����[�h�E�A�����[�h
-�@�֐���������.�~�~�Ƃ����悤�ɁA�h�b�g�ŋ�؂�ꂽ���O�ɂ����
-�@����́���.����n�܂�֐���akari.dll���[�h�㏉�߂ČĂ΂ꂽ�^�C�~���O��
-�@�u����.ModLoad�v
-�@�Ƃ����֐��̌Ăяo�������݂܂�
-�@�܂�akari.dll�̃A�����[�h���ɁA����Ăяo���ꂽ�S�Ă̎�ނ́u����.�v�ɂ���
-�@�u����.ModUnload�v
-�@�Ƃ����֐��̌Ăяo�������݂܂�
-�@���W���[�����֐����ʂ̏������E��n�������K�v�ȏꍇ�ɗ��p���Ă�������
-���g�p�ł��Ȃ��֐���
-�@load,unload,_customrequest��3����сA�uAKASAORI�v����n�܂�֐�����
-�@�� as SAORI�̃V�X�e���Ŏg�p���邽�߃��W���[�����ł͎g���܂���
-�@�����̊֐������Ă΂ꂽ�ꍇ�A���W���[�����ɂ������Ƃ��Ă��A
-�@SAORI�Ăяo���ɑ΂���"204 No Content"��ԋp���܂��i���j
-�@���O�o�́u�����SAORI�@�\�v�̏͂ŐG���֐��͗�O�I�ɌĂяo���܂�
-���g�p�ł��Ȃ��ϐ���
-�@�ȉ��̕ϐ����̓V�X�e���ŃO���[�o���ϐ��Ƃ��Ē�`���Ă��邽�߁A
-�@�O�o��SAORI�߂�l�̐ݒ�ȊO�ł́A
-�@��{�I�ɒl��j�󂵂Ȃ��悤�ɒ��ӂ��Ă�������
+▼関数としての戻り値
+・ここでいうのはSAORIの実行結果としての戻り値ではなく、
+　各モジュール関数が灯asSAORIシステム部に対してreturnする値についてです
+・呼び出された関数が正常に処理された場合は、「1」を返してください
+　"200 OK"というステータスと、後述するSAORI戻り値をSHIORIに返却します
+・もし「-1」が返ると、SAORIは今回の要求が不正なものであったとして
+　"404 Bad Request"というステータスをSHIORIに返却します
+　関数の実行上適さない引数が渡された場合等は、-1を返してください
+・もし「0」が返ると、SAORIは今回要求された内容について返却すべき内容はないとして
+　"204 No Content"というステータスをSHIORIに返却します
+・戻り値に帰結しないような処理はステータスに関わらず実行される場合があります
+　例えば関数中で灯ビルトイン関数_mouserightclick()が正常に実行されれば
+　最終的なステータスに関わらずその場でマウス右クリックが実行されます
+▼SAORI引数
+・呼び出された関数の引数は、関数内で変数「REQ["ARGS"][N]」として利用できます
+　Nは0以上の整数です
+・逆に言うと、通常の形式では引数が渡されませんので注意してください
+・引数は全て文字列型で渡されますので、関数ごとに適宜変換してください
+▼SAORI戻り値
+・SAORIからの戻り値は、モジュール内で辞書型変数「RES」の要素として設定します
+　戻り値には単数戻り値（Result）と複数戻り値（ValueN）の二種類があります
+　それぞれ「RES["RESULT"]」「RES["VALUE"][N]」という辞書型変数の要素が対応します
+　状況に応じて使い分けてください
+・複数戻り値RES["VALUE"][N]への代入は、単に
+　RES["VALUE"][0] = 値0
+　ではできません。順番に
+　RES["VALUE"] += 値0
+　RES["VALUE"] += 値1
+　:
+　とするか、
+　RES["VALUE"] = {値0,値1,...}
+　とします。
+・それぞれの戻り値は全て文字列型に変換される点に注意してください
+・関数が0や-1をreturnすると、これらの戻り値はSHIORIに返却されません
+　※前出の「▼関数としての戻り値」参照
+▼モジュールロード・アンロード
+　関数名を○○.××というように、ドットで区切られた名前にすると
+　同一の○○.から始まる関数がakari.dllロード後初めて呼ばれたタイミングで
+　「○○.ModLoad」
+　という関数の呼び出しを試みます
+　またakari.dllのアンロード時に、今回呼び出された全ての種類の「○○.」について
+　「○○.ModUnload」
+　という関数の呼び出しを試みます
+　モジュール内関数共通の初期化・後始末等が必要な場合に利用してください
+▼使用できない関数名
+　load,unload,_customrequestの3つおよび、「AKASAORI」から始まる関数名は
+　灯 as SAORIのシステムで使用するためモジュール側では使えません
+　これらの関数名が呼ばれた場合、モジュール内にあったとしても、
+　SAORI呼び出しに対して"204 No Content"を返却します（※）
+　※前出の「特殊なSAORI機能」の章で触れる関数は例外的に呼び出せます
+▼使用できない変数名
+　以下の変数名はシステムでグローバル変数として定義しているため、
+　前出のSAORI戻り値の設定以外では、
+　基本的に値を破壊しないように注意してください
 
-�@AKASAORI
-�@REQ
-�@RES
+　AKASAORI
+　REQ
+　RES
 
-�@���A���̗\���ɂ��C��t���Ă�������
-�����̑�
-�@main.azr���ɂ͈ȉ��̂悤�Ȋ֐�������܂�
-�@�󋵂ɂ���Ă̓��W���[�����ł����p�ł��邩������܂���
-�Estring AKASAORI.TOOL.Join(array �z�� , string ��؂莚�i�ȗ����u,�v�j)
-�@�z��^�̒l�̊e�v�f�Ԃ��w�肵����؂莚�ŘA������������ɂ��ĕԂ��܂�
-�@�v�f�̒��g�Ƃ��Ĕz��^�E�����^�̒l�͎g���܂���
-�@�˂��ꂼ��@�v�f���烉���_���ɑ���/�󕶎��񉻁@����܂�
-�Estring AKASAORI.TOOL.JoinDict(array �z�� , string �����v�f�Ԃ̋�؂莚�i�ȗ����u,�v�j , �����̃L�[�ƒl�̊Ԃ̋�؂莚�i�ȗ����u:�v�j)
-�@�����^�̒l�̊e�v�f�Ԃ���уL�[�E�l�Ԃ��w�肵����؂莚�ŘA������������ɂ��ĕԂ��܂�
-�@�v�f�̕��т͓���_dickeyget�֐��Ɉˑ��i���Ԃ�unicode�������j���܂�
-�@�l�Ƃ��Ĕz��^�E�����^�̒l�͎g���܂���
-�@�˂��ꂼ��@�v�f���烉���_���ɑ���/�󕶎��񉻁@����܂�
-�EAKASAORI.TOOL.PopMes(string �\�����郁�b�Z�[�W)
-�@SAORI���W���[�����ŁA����_popmes�֐����g���ƁA
-�@�������x�[�X�E�F�A�ɖ߂�Ȃ��Ȃ�SSP��info���x���̃G���[��ʒm�������Ă��܂��̂ŁA
-�@�ʃX���b�h��_popmes�����s����悤�ɂ��������̂���
+　他、灯の予約語にも気を付けてください
+▼その他
+　main.azr内には以下のような関数があります
+　状況によってはモジュール側でも利用できるかもしれません
+・string AKASAORI.TOOL.Join(array 配列 , string 区切り字（省略時「,」）)
+　配列型の値の各要素間を指定した区切り字で連結した文字列にして返します
+　要素の中身として配列型・辞書型の値は使えません
+　⇒それぞれ　要素からランダムに択一/空文字列化　されます
+・string AKASAORI.TOOL.JoinDict(array 配列 , string 辞書要素間の区切り字（省略時「,」） , 辞書のキーと値の間の区切り字（省略時「:」）)
+　辞書型の値の各要素間およびキー・値間を指定した区切り字で連結した文字列にして返します
+　要素の並びは灯の_dickeyget関数に依存（たぶんunicode辞書順）します
+　値として配列型・辞書型の値は使えません
+　⇒それぞれ　要素からランダムに択一/空文字列化　されます
+・AKASAORI.TOOL.PopMes(string 表示するメッセージ)
+　SAORIモジュール内で、灯の_popmes関数を使うと、
+　処理がベースウェアに戻らなくなりSSPがinfoレベルのエラーを通知し続けてしまうので、
+　別スレッドで_popmesを実行するようにしただけのもの
 
-��=�X�V����=====================================================================
-�@2016.05.24�@����dll��ver2.003�ɕύX
-�@�@�@�@�@�@�@builtin.azr��ver�܂łɒǉ��̑�̂̊֐��ɑΉ��i�ꕔSAORI�Ƃ��Ă͖��Ӗ��Ȋ֐��܁j
-�@�@�@�@�@�@�@json�n�����sprintf�͑Ή�������
-�@2013.09.25�@���C�Z���X�I�ɖ��Ȃ��Ɣ��f���Aakari.dll���p�b�P�[�W�ɓ���
-�@�@�@�@�@�@�@GET Version�œ��̌�version��Result�Ƃ��ĕԋp����悤��
-�@�@�@�@�@�@�@version,�ɑΉ�
-�@�@�@�@�@�@�@�isprintf��json�n�͂ǂ�Ȍ`�����悢���v�����Ȃ��̂ŕۗ��c�c�j
-��---ver1.977�Ή�
-�@2013.04.08	���e�X�g�Ƒ肵�Č��J
-��---ver1.9733�Ή�
+●=更新履歴=====================================================================
+　2016.05.24　同梱dllを灯ver2.003に変更
+　　　　　　　builtin.azrを同verまでに追加の大体の関数に対応（一部SAORIとしては無意味な関数含）
+　　　　　　　json系およびsprintfは対応見送り
+　2013.09.25　ライセンス的に問題ないと判断し、akari.dllをパッケージに同梱
+　　　　　　　GET Versionで灯の現versionをResultとして返却するように
+　　　　　　　version,に対応
+　　　　　　　（sprintfとjson系はどんな形式がよいか思いつかないので保留……）
+△---ver1.977対応
+　2013.04.08	βテストと題して公開
+△---ver1.9733対応

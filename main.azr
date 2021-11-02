@@ -1,5 +1,5 @@
 // ============================================================================================= //
-// “”asSAORIƒVƒXƒeƒ€—p•Ï”E’è”i‚Ì‚æ‚¤‚ÈŠÖ”j’è‹`
+// ç¯asSAORIã‚·ã‚¹ãƒ†ãƒ ç”¨å¤‰æ•°ãƒ»å®šæ•°ï¼ˆã®ã‚ˆã†ãªé–¢æ•°ï¼‰å®šç¾©
 // ============================================================================================= //
 string AKASAORI.ProtocolVersion(){return "SAORI/1.0" ;}
 string AKASAORI.ProtocolSender(){return "akari" ;}
@@ -44,7 +44,7 @@ string AKASAORI.Status(string status)
 			,$("VALUE"   , {})
 		} ;
 // ============================================================================================= //
-// ƒ[ƒhEƒAƒ“ƒ[ƒh
+// ãƒ­ãƒ¼ãƒ‰ãƒ»ã‚¢ãƒ³ãƒ­ãƒ¼ãƒ‰
 // ============================================================================================= //
 load(string arg)
 {
@@ -54,7 +54,7 @@ load(string arg)
 }
 unload()
 {
-	// ƒ‚ƒWƒ…[ƒ‹ƒAƒ“ƒ[ƒh
+	// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚¢ãƒ³ãƒ­ãƒ¼ãƒ‰
 	for(int i = 0 ; AKASAORI["LOADEDCLS"][i] != nil ; i++){
 		string fnc = AKASAORI["LOADEDCLS"][i] + ".ModUnload" ;
 		_fncstr(fnc) ;
@@ -62,7 +62,7 @@ unload()
 }
 
 AKASAORI.ReadSettingCSV()
-{// İ’èƒtƒ@ƒCƒ‹i.csvj‚Ì“Ç‚İ‚İ
+{// è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ï¼ˆ.csvï¼‰ã®èª­ã¿è¾¼ã¿
 	string path = AKASAORI.SettingCSVPath() ;
 	while(1){
 		if(AKASAORI["LOADEDCSV"][path] == nil && AKASAORI["NFCSV"][path] == nil){
@@ -74,10 +74,10 @@ AKASAORI.ReadSettingCSV()
 					switch(line[i][0]){
 					case "module"  :
 						AKASAORI["ACTMOD"] += line[i][1] ;
-						break ; //  !switch•¶‚Ìbreak!
+						break ; //  !switchæ–‡ã®break!
 					case "include" :
 						AKASAORI["ACTCSV"] += line[i][1] ;
-						break ; // !switch•¶‚Ìbreak!
+						break ; // !switchæ–‡ã®break!
 					}
 				}
 			}
@@ -96,7 +96,7 @@ AKASAORI.ReadSettingCSV()
 	}
 }
 AKASAORI.ReadModule()
-{// ƒ‚ƒWƒ…[ƒ‹ƒtƒ@ƒCƒ‹i.azrj‚Ì“Ç‚İ‚İ
+{// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ï¼ˆ.azrï¼‰ã®èª­ã¿è¾¼ã¿
 	string path ;
 	while(1){
 		if(AKASAORI["ACTMOD"][0] == nil){
@@ -118,23 +118,23 @@ AKASAORI.ReadModule()
 	}
 }
 // ============================================================================================= //
-// ‘—óM
+// é€å—ä¿¡
 // ============================================================================================= //
 array _customrequest(dict ref)
 {/*
-	SAORIƒŠƒNƒGƒXƒg
+	SAORIãƒªã‚¯ã‚¨ã‚¹ãƒˆ
 
-	Argument0: (dict)ref SAORI‚É“n‚³‚ê‚½ˆø”
+	Argument0: (dict)ref SAORIã«æ¸¡ã•ã‚ŒãŸå¼•æ•°
 		   head         : EXECUTE SAORI/1.0|GET Version SAORI/1.0
 		   SecurityLevel: Local|External
 		   Charset      : Shift_JIS|ISO-2022-JP|EUC-JP|UTF-8
-		   Sender       : ‘—MŒ³SHIORI–¼iex:SATORI,AYAj
-		   Argument0    : ŒÄ‚Ño‚·ŠÖ”–¼
-		   Argument1`  : ŒÄ‚Ño‚·ŠÖ”‚Ìˆø”
-	Return   : (array) SAORI‚Æ‚µ‚Ä‚Ì–ß‚è’lB1s‚²‚Æ1—v‘f‚É‚Â‚ß‚Äreturn‚·‚ê‚Î
-		           ‚ ‚Æ‚Í“”‚³‚ñ‚ªCRLF‚Å˜AŒ‹‚µ‚ÄSHIORI‚É•Ô‹p‚µ‚Ä‚­‚ê‚é
+		   Sender       : é€ä¿¡å…ƒSHIORIåï¼ˆex:SATORI,AYAï¼‰
+		   Argument0    : å‘¼ã³å‡ºã™é–¢æ•°å
+		   Argument1ï½  : å‘¼ã³å‡ºã™é–¢æ•°ã®å¼•æ•°
+	Return   : (array) SAORIã¨ã—ã¦ã®æˆ»ã‚Šå€¤ã€‚1è¡Œã”ã¨1è¦ç´ ã«ã¤ã‚ã¦returnã™ã‚Œã°
+		           ã‚ã¨ã¯ç¯ã•ã‚“ãŒCRLFã§é€£çµã—ã¦SHIORIã«è¿”å´ã—ã¦ãã‚Œã‚‹
  */
-	// ‰Šú‰»[‹¤’Ê]
+	// åˆæœŸåŒ–[å…±é€š]
 	REQ["HEAD"]          = (string)ref["head"]          ;
 
 	array headsplit = _strsplit(REQ["HEAD"] , " SAORI") ;
@@ -158,13 +158,13 @@ array _customrequest(dict ref)
 		return AKASAORI.Response(AKASAORI.Status("OK") , 1) ;
 	}
 	else if(REQ["COMMAND"] == "EXECUTE")    {
-		// SAORIˆø”‚©‚çŠÖ”ˆø”‚ğ\’z
+		// SAORIå¼•æ•°ã‹ã‚‰é–¢æ•°å¼•æ•°ã‚’æ§‹ç¯‰
 		string a ;
 		for(int i = 1 ; ref["Argument" + i] != nil ; i++){
 			a = ref["Argument" + i] ;
 			REQ["ARGS"] += a ;
 		}
-		// ŒÄ‚Ño‚³‚ê‚½ŠÖ”‚ÌÀs‚ÆSAORI–ß‚è’l\’z
+		// å‘¼ã³å‡ºã•ã‚ŒãŸé–¢æ•°ã®å®Ÿè¡Œã¨SAORIæˆ»ã‚Šå€¤æ§‹ç¯‰
 		if(_strstr(REQ["HEAD"] , "SAORI") != -1) {
 			if
 			(
@@ -173,7 +173,7 @@ array _customrequest(dict ref)
 			&& REQ["FUNC"] != "unload"
 			&& REQ["FUNC"] != "_customrequest"
 			)    {
-				// ƒ‚ƒWƒ…[ƒ‹ƒ[ƒh
+				// ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒ­ãƒ¼ãƒ‰
 				if(_strstr(REQ["FUNC"] , ".") > -1){
 					string cls = _strsplit(REQ["FUNC"] , ".")[0] ;
 					if(cls != ""){
@@ -208,10 +208,10 @@ array _customrequest(dict ref)
 }
 array AKASAORI.Response(string status, int result)
 {/*
-	SAORI–ß‚è’l\’z
-	Argument0: (string)status status‚Æ‚µ‚Ä•Ô‹p‚·‚é—\’è‚Ì•¶š—ñ
-	Argument1: (int)result    Œ‹‰Ê‚ğ•Ô‹p‚·‚éê‡‚Ì‚İ1
-	Return   : (array) SAORI–ß‚è’l
+	SAORIæˆ»ã‚Šå€¤æ§‹ç¯‰
+	Argument0: (string)status statusã¨ã—ã¦è¿”å´ã™ã‚‹äºˆå®šã®æ–‡å­—åˆ—
+	Argument1: (int)result    çµæœã‚’è¿”å´ã™ã‚‹å ´åˆã®ã¿1
+	Return   : (array) SAORIæˆ»ã‚Šå€¤
  */
 	if(RES["STATUS"]  != "") status  = RES["STATUS"]       ;
 
@@ -232,10 +232,10 @@ array AKASAORI.Response(string status, int result)
 	response += "Sender: " + sender ;
 
 	if(result){
-		// Result‚Ì\’z
+		// Resultã®æ§‹ç¯‰
 		response += "Result: " + (string)RES["RESULT"] ;
 
-		// VallueN‚Ì\’z
+		// VallueNã®æ§‹ç¯‰
 		for(int i = 0 ; RES["VALUE"][i] != nil ; i++){
 			response += "Value" + i + ": " + (string)RES["VALUE"][i] ;
 		}
@@ -248,41 +248,41 @@ array AKASAORI.Response(string status, int result)
 	return response ;
 }
 // ============================================================================================= //
-// “Áê‚ÈSAORI‹@”\
+// ç‰¹æ®ŠãªSAORIæ©Ÿèƒ½
 // ============================================================================================= //
 int AKASAORI.SYSFUNC.LOADEDCSV()
-{// load‚Éİ’èƒtƒ@ƒCƒ‹‚Æ‚µ‚Ä“Ç‚İ‚Ü‚ê‚½CSVƒtƒ@ƒCƒ‹‚ğƒJƒ“ƒ}‹æØ‚è‚Å•Ô‚·
+{// loadæ™‚ã«è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã¨ã—ã¦èª­ã¿è¾¼ã¾ã‚ŒãŸCSVãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¿”ã™
 	array key = _dickeyget(AKASAORI["LOADEDCSV"] , ",") ;
 	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
 	return 1 ;
 }
 int AKASAORI.SYSFUNC.NFCSV()
-{// load‚ÌCSVƒtƒ@ƒCƒ‹“Ç‚İ‚İ‚Å”­Œ©‚Å‚«‚È‚©‚Á‚½CSVƒtƒ@ƒCƒ‹‚ğƒJƒ“ƒ}‹æØ‚è‚Å•Ô‚·
+{// loadæ™‚ã®CSVãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿ã§ç™ºè¦‹ã§ããªã‹ã£ãŸCSVãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¿”ã™
 	array key = _dickeyget(AKASAORI["NFCSV"] , ",") ;
 	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
 	return 1 ;
 }
 int AKASAORI.SYSFUNC.LOADEDMOD()
-{// load‚Éƒ‚ƒWƒ…[ƒ‹«‘‚Æ‚µ‚Ä“Ç‚İ‚Ü‚ê‚½«‘‚ğƒJƒ“ƒ}‹æØ‚è‚Å•Ô‚·
+{// loadæ™‚ã«ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«è¾æ›¸ã¨ã—ã¦èª­ã¿è¾¼ã¾ã‚ŒãŸè¾æ›¸ã‚’ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¿”ã™
 	array key = _dickeyget(AKASAORI["LOADEDMOD"] , ",") ;
 	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
 	return 1 ;
 }
 int AKASAORI.SYSFUNC.NFMOD()
-{// load‚Ìƒ‚ƒWƒ…[ƒ‹«‘“Ç‚İ‚İ‚Å”­Œ©‚Å‚«‚È‚©‚Á‚½ƒ‚ƒWƒ…[ƒ‹«‘‚ğƒJƒ“ƒ}‹æØ‚è‚Å•Ô‚·
+{// loadæ™‚ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«è¾æ›¸èª­ã¿è¾¼ã¿ã§ç™ºè¦‹ã§ããªã‹ã£ãŸãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«è¾æ›¸ã‚’ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¿”ã™
 	array key = _dickeyget(AKASAORI["NFMOD"] , ",") ;
 	RES["RESULT"] = AKASAORI.TOOL.Join(key , ",") ;
 	return 1 ;
 }
 
 // ============================================================================================= //
-// ¬“¹‹ï—Ş
+// å°é“å…·é¡
 // ============================================================================================= //
 string AKASAORI.TOOL.Join(array a , string s)
-{// ”z—ñŒ^‚Ì’l‚ÌŠe—v‘fŠÔ‚ğw’è‚µ‚½‹æØ‚èš‚Å˜AŒ‹‚µ‚½•¶š—ñ‚É‚µ‚Ä•Ô‚·
- // —v‘f‚Ì’†g‚É”z—ñŒ^E«‘Œ^‚Í•s‰Âi‚»‚ê‚¼‚ê—v‘f‚©‚çƒ‰ƒ“ƒ_ƒ€‚É‘ğˆê/‹ó•¶š—ñ‰»j
- // Argument0: (array)a  ”z—ñ
- // Argument1: (string)s ‹æØ‚èšiÈ—ª‚Íu,vj
+{// é…åˆ—å‹ã®å€¤ã®å„è¦ç´ é–“ã‚’æŒ‡å®šã—ãŸåŒºåˆ‡ã‚Šå­—ã§é€£çµã—ãŸæ–‡å­—åˆ—ã«ã—ã¦è¿”ã™
+ // è¦ç´ ã®ä¸­èº«ã«é…åˆ—å‹ãƒ»è¾æ›¸å‹ã¯ä¸å¯ï¼ˆãã‚Œãã‚Œè¦ç´ ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«æŠä¸€/ç©ºæ–‡å­—åˆ—åŒ–ï¼‰
+ // Argument0: (array)a  é…åˆ—
+ // Argument1: (string)s åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã¯ã€Œ,ã€ï¼‰
 	string result ;
 
 	if(s == "")	s = "," ;
@@ -295,12 +295,12 @@ string AKASAORI.TOOL.Join(array a , string s)
 	return result ;
 }
 string AKASAORI.TOOL.JoinDict(dict d , string s0 , string s1)
-{// «‘Œ^‚Ì’l‚ÌŠe—v‘fŠÔ‚¨‚æ‚ÑƒL[E’lŠÔ‚ğw’è‚µ‚½‹æØ‚èš‚Å˜AŒ‹‚µ‚½•¶š—ñ‚É‚µ‚Ä•Ô‚·
- // —v‘f‚Ì•À‚Ñ‚Í_dickeyget()ŠÖ”‚Ìd—l‚ÉˆË‘¶i‚½‚Ô‚ñunicode«‘‡j
- // —v‘f‚Ì’†g‚É”z—ñŒ^E‘½ŸŒ³«‘Œ^‚Í•s‰Âi‚»‚ê‚¼‚ê—v‘f‚©‚çƒ‰ƒ“ƒ_ƒ€‚É‘ğˆê/‹ó•¶š—ñ‰»j
- // Argument0: (array)a   «‘Œ^‚Ì’l
- // Argument1: (string)s0 «‘—v‘fŠÔ‚Ì‹æØ‚èšiÈ—ª‚Íu,vj
- // Argument2: (string)s1 «‘‚ÌƒL[‚Æ’l‚ÌŠÔ‚Ì‹æØ‚èšiÈ—ª‚Íu:vj
+{// è¾æ›¸å‹ã®å€¤ã®å„è¦ç´ é–“ãŠã‚ˆã³ã‚­ãƒ¼ãƒ»å€¤é–“ã‚’æŒ‡å®šã—ãŸåŒºåˆ‡ã‚Šå­—ã§é€£çµã—ãŸæ–‡å­—åˆ—ã«ã—ã¦è¿”ã™
+ // è¦ç´ ã®ä¸¦ã³ã¯_dickeyget()é–¢æ•°ã®ä»•æ§˜ã«ä¾å­˜ï¼ˆãŸã¶ã‚“unicodeè¾æ›¸é †ï¼‰
+ // è¦ç´ ã®ä¸­èº«ã«é…åˆ—å‹ãƒ»å¤šæ¬¡å…ƒè¾æ›¸å‹ã¯ä¸å¯ï¼ˆãã‚Œãã‚Œè¦ç´ ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«æŠä¸€/ç©ºæ–‡å­—åˆ—åŒ–ï¼‰
+ // Argument0: (array)a   è¾æ›¸å‹ã®å€¤
+ // Argument1: (string)s0 è¾æ›¸è¦ç´ é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã¯ã€Œ,ã€ï¼‰
+ // Argument2: (string)s1 è¾æ›¸ã®ã‚­ãƒ¼ã¨å€¤ã®é–“ã®åŒºåˆ‡ã‚Šå­—ï¼ˆçœç•¥æ™‚ã¯ã€Œ:ã€ï¼‰
 	string result ;
 
 	if(s0 == "") s0 = "," ;
@@ -319,6 +319,6 @@ string AKASAORI.TOOL.JoinDict(dict d , string s0 , string s1)
 }
 
 AKASAORI.TOOL.PopMes(string message)
-{// _popmes()ŠÖ”‚ğ•ÊƒXƒŒƒbƒh‚ÅÀs‚µ‚ÄASSP‚ÌƒGƒ‰[‚ğ‰ñ”ğ‚·‚é‚½‚ß‚¾‚¯‚ÌŠÖ”
+{// _popmes()é–¢æ•°ã‚’åˆ¥ã‚¹ãƒ¬ãƒƒãƒ‰ã§å®Ÿè¡Œã—ã¦ã€SSPã®ã‚¨ãƒ©ãƒ¼ã‚’å›é¿ã™ã‚‹ãŸã‚ã ã‘ã®é–¢æ•°
 	_create_thread("_popmes" , message) ;
 }
