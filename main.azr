@@ -14,7 +14,7 @@ string AKASAORI.Status(string status)
 		default                      :	return "500 Internal Server Error" ;
 	}
 }
- dict AKASAORI = ${
+dict AKASAORI = ${
 			 $("VERSION"   , AKASAORI.ProtocolVersion())
 			,$("SENDER"    , AKASAORI.ProtocolSender())
 			,$("LOADEDCLS" , ${})
@@ -25,7 +25,7 @@ string AKASAORI.Status(string status)
 			,$("ACTCSV"    , {})
 			,$("ACTMOD"    , {})
 		} ;
- dict REQ      = ${
+dict REQ      = ${
 			 $("HEAD"          , "")
 			,$("COMMAND"       , "")
 			,$("VERSION"       , "")
@@ -35,7 +35,7 @@ string AKASAORI.Status(string status)
 			,$("FUNC"          , "")
 			,$("ARGS"          , {})
 		} ;
- dict RES      = ${
+dict RES      = ${
  			 $("STATUS"  , "")
 			,$("VERSION" , "")
 			,$("SENDER"  , "")
@@ -154,7 +154,7 @@ array _customrequest(dict ref)
 	RES["VALUE"]   = {} ;
 
 	if     (REQ["COMMAND"] == "GET Version"){
-		RES["RESULT] = "AKARI/" + _version() ;
+		RES["RESULT"] = "AKARI/" + _version() ;
 		return AKASAORI.Response(AKASAORI.Status("OK") , 1) ;
 	}
 	else if(REQ["COMMAND"] == "EXECUTE")    {
@@ -215,9 +215,9 @@ array AKASAORI.Response(string status, int result)
  */
 	if(RES["STATUS"]  != "") status  = RES["STATUS"]       ;
 
-	string version = "" ;
-	if(RES["VERSION"] != "") version = RES["VERSION"]      ;
-	else                     version = AKASAORI["VERSION"] ;
+	string ver = "" ;
+	if(RES["VERSION"] != "") ver = RES["VERSION"]      ;
+	else                     ver = AKASAORI["VERSION"] ;
 
 	string sender  = "" ;
 	if(RES["SENDER"]  != "") sender  = RES["SENDER"]       ;
@@ -228,7 +228,7 @@ array AKASAORI.Response(string status, int result)
 	else                     charset = REQ["CHARSET"]      ;
 
 	array response ;
-	response += version + " " + status ;
+	response += ver + " " + status ;
 	response += "Sender: " + sender ;
 
 	if(result){
@@ -242,7 +242,6 @@ array AKASAORI.Response(string status, int result)
 	}
 
 	response += "Charset: " + charset ;
-	response += "" ;
 	response += "" ;
 
 	return response ;
