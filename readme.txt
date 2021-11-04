@@ -56,7 +56,7 @@ Donが加えた変更部分のライセンスはパブリックドメインと�
 ●=使い方の基本=================================================================
 1,akari.dllを、ゴーストのSHIORIに応じた適切な方法でSAORIとして使えるようにする
 　※参考：里々の場合
-　　http://soliton.sub.jp/satori/index.php?%B3%B0%C9%F4%B4%D8%BF%F4%2FSAORI#e97e5d17
+　　http://soliton.sub.jp/satori/index.php?SAORI#tee642d7
 2,akari.dllと同じディレクトリに、
 　「main.azr」「akasaori.csv」「builtin.azr※」を設置する
 　※灯ビルトイン関数をSAORI機能として使わない場合は不要
