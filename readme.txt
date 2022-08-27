@@ -5,7 +5,7 @@ AKARI as SAORI
 メンテナンス・再配布しております。
 
 再配布者：Don
-　サイト：http://nikolat.herokuapp.com/
+　サイト：https://nikolat.github.io/
 
 Donが加えた変更部分のライセンスはパブリックドメインとします。
 
