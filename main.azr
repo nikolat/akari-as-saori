@@ -172,6 +172,7 @@ array _customrequest(dict ref)
 			&& REQ["FUNC"] != "load"
 			&& REQ["FUNC"] != "unload"
 			&& REQ["FUNC"] != "_customrequest"
+			&& REQ["SECURITYLEVEL"] != "External" && REQ["SECURITYLEVEL"] != "external"
 			)    {
 				// モジュールロード
 				if(_strstr(REQ["FUNC"] , ".") > -1){
